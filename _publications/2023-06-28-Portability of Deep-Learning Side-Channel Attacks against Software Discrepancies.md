@@ -3,7 +3,7 @@ title: "Portability of Deep-Learning Side-Channel Attacks against Software Discr
 collection: publications
 category: conferences
 permalink: /publication/2023-06-28-portability-of-deep-learning-side-channel-attacks-against-software-discrepancies/
-excerpt: 'This paper is about fixing template issue #693.'
+#excerpt: 'This paper is about fixing template issue #693.'
 date: 2023-06-28
 venue: "WiSec '23: Proceedings of the 16th ACM Conference on Security and Privacy in Wireless and Mobile Networks"
 paperurl: "http://ninanmm.github.io/files/softwarepwr.pdf"
