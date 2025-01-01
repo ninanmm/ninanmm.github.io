@@ -36,7 +36,7 @@ author:
   impactstory      : # URL
   orcid            : "https://orcid.org/0009-0000-3619-5848"
   semantic         : # URL
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  pubmed           :  #
   researchgate     : "https://www.researchgate.net/profile/Mabon-Ninan" # URL
 
   # Repositories and software development
