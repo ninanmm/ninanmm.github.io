@@ -9,7 +9,7 @@ redirect_from:
 
 ## About Mabon Ninan  
 
-Mabon Ninan is a first-year Ph.D. student in Computer Science at **Texas A&M University**, advised by **Dr. Marcus Botacin**. His research focuses on **explainable machine learning for next-generation malware detection**, with an emphasis on **adversarial robustness, interpretability, and security in AI-driven systems**. His work explores how machine learning models can be made more transparent and resilient against evolving cyber threats, particularly in the context of malware analysis and detection.  
+Mabon Ninan is a first-year Ph.D. student in Computer Science at **Texas A&M University**, advised by [**Dr. Marcus Botacin**](https://marcusbotacin.github.io/). His research focuses on **explainable machine learning for next-generation malware detection**, with an emphasis on **adversarial robustness, interpretability, and security in AI-driven systems**. His work explores how machine learning models can be made more transparent and resilient against evolving cyber threats, particularly in the context of malware analysis and detection.  
 
 ### Research Interests  
 
@@ -23,7 +23,7 @@ Mabon’s research spans multiple domains at the intersection of **machine learn
 
 ### Academic Background  
 
-Mabon earned his **B.S. in Computer Engineering** from the **University of Cincinnati**, graduating **summa cum laude**. Under the mentorship of **Dr. Boyang Wang**, his undergraduate research focused on **domain adaptation for deep learning models and tiny neural networks**. His work in this space led to **multiple publications in top-tier security and machine learning conferences**, such as **RAID, HOST, and WiSec**.  
+Mabon earned his **B.S. in Computer Engineering** from the **University of Cincinnati**, graduating **summa cum laude**. Under the mentorship of [**Dr. Boyang Wang**](https://homepages.uc.edu/~wang2ba/), his undergraduate research focused on **domain adaptation for deep learning models and tiny neural networks**. His work in this space led to **multiple publications in top-tier security and machine learning conferences**, such as **RAID, HOST, and WiSec**.  
 
 ### Publications & Contributions  
 
