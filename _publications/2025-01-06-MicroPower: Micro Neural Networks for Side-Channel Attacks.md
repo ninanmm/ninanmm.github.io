@@ -17,4 +17,4 @@ keywords:
   - "Side-channel attacks"
   - "Hardware"
 ---
-[Download Paper](https://github.com/ninanmm/ninanmm.github.io/files/micro_power.pdf)
+[Download Paper](https://ninanmm.github.io/files/micro_power.pdf)
