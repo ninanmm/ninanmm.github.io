@@ -1,7 +1,7 @@
 ---
 title: "Deep Learning Side-Channel Attacks: Challenges and Opportunities"
 collection: publications
-category: bookchapters
+category: Books
 permalink: /publication/2025-04-02-Deep-Learning-Side-Channel-Attacks-Challenges-and-Opportunities/
 excerpt: "An exploration of deep learning-based side-channel analysis techniques, highlighting key challenges and future directions in the context of hardware design and trust."
 date: 2025-04-02
