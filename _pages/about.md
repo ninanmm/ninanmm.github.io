@@ -7,67 +7,84 @@ redirect_from:
   - /about.html
 ---
 
-## About Mabon Ninan  
+## About Me
 
-Mabon Ninan is a first-year Ph.D. student in Computer Science at **Texas A&M University**, advised by [**Dr. Marcus Botacin**](https://marcusbotacin.github.io/). His research focuses on **explainable machine learning for next-generation malware detection**, with an emphasis on **adversarial robustness, interpretability, and security in AI-driven systems**. His work explores how machine learning models can be made more transparent and resilient against evolving cyber threats, particularly in the context of malware analysis and detection.  
+I’m a first-year Ph.D. student in Computer Science at **Texas A&M University**, advised by [Dr. Marcus Botacin](https://marcusbotacin.github.io/). My research focuses on building **secure, interpretable, and robust machine learning systems** for real-world applications in **malware detection**, **embedded systems**, and **medical imaging**.
 
-### Research Interests  
+My goal is to bridge foundational work in **AI robustness and explainability** with practical deployments in **cybersecurity** and **healthcare**.
 
-Mabon’s research spans multiple domains at the intersection of **machine learning, cybersecurity, and embedded systems security**, including:  
+---
 
-- **Explainable AI (XAI) for Malware Detection** – Developing interpretable models to enhance trust and transparency in malware classification.  
-- **Adversarial Machine Learning** – Investigating attack vectors and defenses in malware detection systems.  
-- **Side-Channel Attacks & Hardware Security** – Exploring deep learning-based side-channel attacks and defenses against software and hardware discrepancies.  
-- **Tiny Neural Networks & Model Optimization** – Designing efficient deep learning models for low-power and embedded devices.  
-- **AI for Medical Imaging** – Collaborating with **Cincinnati Children’s Medical Hospital** to improve interpretability and robustness in pediatric radiology models.  
+## Research Interests
 
-### Academic Background  
+- **Explainable AI (XAI)** – Interpretable ML models for malware detection and medical decision support  
+- **Adversarial Machine Learning** – Robust defenses against evasive malware and attacks on AI systems  
+- **Multimodal & Multi-View Learning** – Integrating binaries, APIs, YARA rules, and text for holistic detection  
+- **Self-Supervised & Unsupervised Learning** – Leveraging unlabeled data to adapt across domains  
+- **Side-Channel Attacks** – Understanding leakage and defense via deep learning over EM traces  
+- **Tiny Neural Networks & Model Compression** – Efficient models for embedded and low-power devices  
+- **Generative Models & Algorithmic Robustness** – Using generative AI to simulate malware and improve detectors  
+- **AI for Medical Imaging** – Interpretable and robust pediatric radiology models in collaboration with Cincinnati Children’s Hospital  
 
-Mabon earned his **B.S. in Computer Engineering** from the **University of Cincinnati**, graduating **summa cum laude**. Under the mentorship of [**Dr. Boyang Wang**](https://homepages.uc.edu/~wang2ba/), his undergraduate research focused on **domain adaptation for deep learning models and tiny neural networks**. His work in this space led to **multiple publications in top-tier security and machine learning conferences**, such as **RAID, HOST, and WiSec**.  
+---
 
-### Publications & Contributions  
+## Academic Background
 
-Mabon has authored and co-authored **several research papers** in the fields of **malware detection, adversarial AI, and side-channel attacks**, including:  
+I earned my **B.S. in Computer Engineering** from the **University of Cincinnati**, graduating **summa cum laude**. During undergrad, I worked with [Dr. Boyang Wang](https://homepages.uc.edu/~wang2ba/) on **domain adaptation** and **tiny neural networks**. That work led to multiple papers at top-tier conferences.
 
-- **RAID 2024**: *A Second Look at the Portability of Deep Learning Side-Channel Attacks over EM Traces*  
-- **IEEE HOST 2024**: *TinyPower: Side-Channel Attacks with Tiny Neural Networks* (*Best Student Paper Award*)  
-- **ACM WiSec 2023**: *Portability of Deep-Learning Side-Channel Attacks against Software Discrepancies*  
-- **ICMLA 2023**: *EvilELF: Evasion Attacks on Deep-Learning Malware Detection over ELF Files*  
+---
 
-His research contributions also extend to **white papers, book chapters, and ongoing submissions**, further advancing knowledge in security and AI.  
+## Publications
 
-### Research & Work Experience  
+I’ve published in major venues spanning security and AI, including:
 
-- **Research Assistant, Texas A&M University** (2024 – Present)  
-  - Investigating **cross-regional malware detection** using model distillation and federated learning.  
-  - Developing novel **interpretability techniques for machine learning-based malware detection**.  
+- **RAID**, **IEEE HOST**, **ACM WiSec**,**IEEE NAECON** **ICMLA**
+- 📖 *Deep Learning Side-Channel Attacks: Challenges and Opportunities*, in  
+  **Advancements in Hardware Design and Trust**, CRC Press, ISBN: 9781032840420, 2025
 
-- **Research Scientist, Cincinnati Children’s Medical Hospital** (2024 – Present)  
-  - Developing **foundation models for CXR imaging** to enhance interpretability in pediatric clinical settings.  
-  - Establishing **evaluation metrics that integrate textual and visual features** in radiology reports.  
-  - Leveraging **BERT-based models** to classify pediatric reports into common disease categories.  
+> 📚 Full list: [ninanmm.github.io/publications](https://ninanmm.github.io/publications/)
 
-- **Research Assistant, University of Cincinnati Data Security and Privacy Lab** (2022 – 2024)  
-  - Designed a **custom pruning algorithm reducing model complexity by up to 98%** for deployment on embedded devices.  
-  - Developed **reinforcement learning-based architecture search** to optimize models for high-noise environments.  
-  - Proposed **unsupervised training techniques** to enhance domain adaptation in deep learning.  
+---
 
-### Awards & Recognition  
+## Research Experience
 
-- **Best Student Paper Award**, IEEE HOST 2024  
-- **Undergraduate Research Fellowship**, University of Cincinnati, 2023  
+**Texas A&M University** — *Research Assistant* (2024–Present)  
+- Developing interpretable malware detectors using federated learning  
+- Modeling cross-regional threat patterns via model distillation  
 
-### Selected Talks  
+**Cincinnati Children’s Hospital** — *Research Scientist* (2024–Present)  
+- Building foundation models for pediatric chest X-rays  
+- Creating multi-modal evaluation metrics for radiology models  
 
-Mabon has presented his work at leading security and AI conferences, including:  
+**University of Cincinnati** — *Research Assistant, Data Security & Privacy Lab* (2022–2024)  
+- Designed pruning algorithms reducing model size by up to 98%  
+- Proposed RL-based architecture search for noisy environments  
+- Developed unsupervised training pipelines for domain adaptation  
 
-- **RAID 2024 (Padua, Italy)** – *A Second Look at the Portability of Deep Learning Side-Channel Attacks over EM Traces*  
-- **IEEE HOST 2024 (Washington, D.C.)** – *TinyPower: Side-Channel Attacks with Tiny Neural Networks*  
-- **ACM WiSec 2023 (United Kingdom)** – *Portability of Deep-Learning Side-Channel Attacks against Software Discrepancies*  
-- **CHEST Annual Conference 2024 (Connecticut, USA)** – *Side-Channel Attacks and Tiny Neural Networks*  
+---
 
-### Future Directions  
+## Awards
 
-Mabon aims to bridge the gap between **AI security, malware research, and explainability**, with the goal of **developing trustworthy, resilient, and interpretable machine learning systems**. His work seeks to **enhance security in real-world applications**, from malware detection to critical AI-driven medical diagnostics.  
+- 🏆 **Best Student Paper Award** – IEEE HOST 2024  
+- 🎓 **Undergraduate Research Fellowship** – University of Cincinnati, 2022,2023,2024 
 
-For more details, visit [Mabon’s personal website](#) or reacxh out via email.
+---
+
+## Invited Talks
+
+I've presented at several major academic conferences, including:
+
+- **RAID 2024** (Italy)  
+- **IEEE HOST 2024** (Washington, D.C.)  
+- **ACM WiSec 2023** (United Kingdom)  
+- **CHEST Annual Conference 2024** (Connecticut)
+
+> 🎤 Slides & recordings: [ninanmm.github.io/talks](https://ninanmm.github.io/talks/)
+
+---
+
+## Looking Ahead
+
+I’m passionate about advancing **trustworthy AI** at the intersection of **security**, **interpretability**, and **real-world impact**. My long-term vision is to design AI systems that are safe, transparent, and resilient — from malware analysis to clinical diagnostics.
+
+For collaborations, questions, or just to connect — feel free to [reach out](mailto:mabon@tamu.edu).
