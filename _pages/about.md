@@ -9,14 +9,15 @@ redirect_from:
 
 ## About Me
 
-I’m a first-year Ph.D. student in Computer Science at **Texas A&M University**, advised by [Dr. Marcus Botacin](https://marcusbotacin.github.io/). My research focuses on building **secure, interpretable, and robust machine learning systems** for real-world applications in **malware detection**, **embedded systems**, and **medical imaging**.
+I’m a Second Year Ph.D. student in Computer Science at **Texas A&M University**, advised by [Dr. Marcus Botacin](https://marcusbotacin.github.io/). My research focuses on building **secure, interpretable, and robust machine learning systems** for real-world applications in **malware detection**, **embedded systems**, and **medical imaging**.
 
-My goal is to bridge foundational work in **AI robustness and explainability** with practical deployments in **cybersecurity** and **healthcare**.
+My goal is to bridge foundational work in **AI robustness and explainability** with practical deployments in **cybersecurity**.
 
 ---
 
 ## Research Interests
-
+--**Model Evolution & Reliability** - Systematically solving Concept Drift to ensure ML models remain effective as data distributions shift over time
+--** Next-Gen Architectures**- Tinkering with Large Language Models (LLMs), Melted Neural Networks, and Brain-inspired Neural Networks
 - **Explainable AI (XAI)** – Interpretable ML models for malware detection and medical decision support  
 - **Adversarial Machine Learning** – Robust defenses against evasive malware and attacks on AI systems  
 - **Multimodal & Multi-View Learning** – Integrating binaries, APIs, YARA rules, and text for holistic detection  
@@ -51,6 +52,8 @@ I’ve published in major venues spanning security and AI, including:
 **Texas A&M University** — *Research Assistant* (2024–Present)  
 - Developing interpretable malware detectors using federated learning  
 - Modeling cross-regional threat patterns via model distillation  
+- Developing malware detection for consumer systems aimed at achieving zero performance overhead
+- Enhancing the **AutoPYara** framework by integrating fuzzy hashing labels for better cluster initialization
 
 **Cincinnati Children’s Hospital** — *Research Scientist* (2024–Present)  
 - Building foundation models for pediatric chest X-rays  
@@ -77,14 +80,21 @@ I've presented at several major academic conferences, including:
 - **RAID 2024** (Italy)  
 - **IEEE HOST 2024** (Washington, D.C.)  
 - **ACM WiSec 2023** (United Kingdom)  
-- **CHEST Annual Conference 2024** (Connecticut)
 
 > 🎤 Slides & recordings: [ninanmm.github.io/talks](https://ninanmm.github.io/talks/)
 
 ---
 
+## Academic Service
+
+* **Program Committee Member**: [RAID 2025](https://raid2025.github.io/committees.html)
+* **Program Committee Member**: 41st ACM/SIGAPP Symposium On Applied Computing
+* **Artifact Evaluator**: CCS 2025
+
+---
+
 ## Looking Ahead
 
-I’m passionate about advancing **trustworthy AI** at the intersection of **security**, **interpretability**, and **real-world impact**. My long-term vision is to design AI systems that are safe, transparent, and resilient — from malware analysis to clinical diagnostics.
+I'm passionate about advancing trustworthy AI at the intersection of security, interpretability, and real-world impact. My long-term vision is to design AI systems that are safe, transparent, and resilient. Recently, I've been exploring novel neural network architectures, including Large Language Models (LLMs), Mixture-of-Experts networks, and biologically-inspired neural systems, with a focus on addressing concept drift in dynamic environments.
 
-For collaborations, questions, or just to connect — feel free to [reach out](mailto:mabon@tamu.edu).
+For collaborations, questions, or just to connect — feel free to [reach out](mailto:ninanmm@tamu.edu).
