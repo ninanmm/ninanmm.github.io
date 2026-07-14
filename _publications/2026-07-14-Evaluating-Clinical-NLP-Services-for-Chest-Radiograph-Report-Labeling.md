@@ -1,7 +1,7 @@
 ---
 title: "Evaluating Clinical NLP Services for Chest Radiograph Report Labeling: A Comparative Study on an Independent Pediatric Dataset"
 collection: publications
-category: journals
+category: manuscripts
 permalink: /publication/2026-07-14-Evaluating-Clinical-NLP-Services-for-Chest-Radiograph-Report-Labeling/
 excerpt: "A comparative study evaluating general-purpose clinical NLP services and dedicated chest X-ray labelers on pediatric chest radiograph reports."
 date: 2026-07-14
