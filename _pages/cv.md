@@ -40,8 +40,7 @@ redirect_from:
 
 ## Publications
 
-- **Mabon Ninan, Ashwin Menon, Marcus Botacin.** “SoK: If ‘Real Attackers Don’t Compute Gradients,’ What Do They Do? Revisiting Adversarial Malware Evasion Using In-the-Wild Malware.”
-- **Mabon Ninan, Nhat Minh Nguyen, Soumyajyoti Dutta, Sidharth Anil, Marcus Botacin.** “AutoPYara: Next-Gen YARA Rule Gen.” In submission, 29th Symposium on Research in Attacks, Intrusions and Defenses (RAID), 2026.
+
 - **Mabon Ninan, Ryan Evans, Logan Reichling, Nirnimesh Ghose, Boyang Wang.** “TinyRadio: Tiny Neural Networks for Fingerprinting Radio Frequency Signals.” IEEE National Aerospace and Electronics Conference (NAECON), 2025. DOI: 10.1109/NAECON65708.2025.11235437.
 - **Logan Reichling, Ryan Evans, Mabon Ninan, Phuc Mai, Boyang Wang, Yunsi Fei, John Emmert.** “MicroPower: Micro Neural Networks for Side-Channel Attacks.” In 2025 IEEE International Symposium on Hardware Oriented Security and Trust (HOST), 2025. DOI: 10.1109/HOST64725.2025.11050048.
 - **Mabon Ninan, Evan Nimmo, Shane Reilly, Channing Smith, Wenhai Sun, Boyang Wang, John M. Emmert.** “A Second Look at the Portability of Deep Learning Side-Channel Attacks over EM Traces.” In RAID ’24: The 27th International Symposium on Research in Attacks, Intrusions and Defenses, pp. 630–643. ACM, 2024. DOI: 10.1145/3678890.3678900.
