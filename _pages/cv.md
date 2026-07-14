@@ -40,10 +40,17 @@ redirect_from:
 
 ## Publications
 
-- **TinyRadio: Tiny Neural Networks for Fingerprinting Radio Frequency Signals**
-- **MicroPower: Micro Neural Networks for Side-Channel Attacks**
-- **A Second Look at the Portability of Deep Learning Side-Channel Attacks over EM Traces**
-- **Deep Learning Side-Channel Attacks: Challenges and Opportunities**
+- **Mabon Ninan, Ashwin Menon, Marcus Botacin.** “SoK: If ‘Real Attackers Don’t Compute Gradients,’ What Do They Do? Revisiting Adversarial Malware Evasion Using In-the-Wild Malware.”
+- **Mabon Ninan, Nhat Minh Nguyen, Soumyajyoti Dutta, Sidharth Anil, Marcus Botacin.** “AutoPYara: Next-Gen YARA Rule Gen.” In submission, 29th Symposium on Research in Attacks, Intrusions and Defenses (RAID), 2026.
+- **Mabon Ninan, Ryan Evans, Logan Reichling, Nirnimesh Ghose, Boyang Wang.** “TinyRadio: Tiny Neural Networks for Fingerprinting Radio Frequency Signals.” IEEE National Aerospace and Electronics Conference (NAECON), 2025. DOI: 10.1109/NAECON65708.2025.11235437.
+- **Logan Reichling, Ryan Evans, Mabon Ninan, Phuc Mai, Boyang Wang, Yunsi Fei, John Emmert.** “MicroPower: Micro Neural Networks for Side-Channel Attacks.” In 2025 IEEE International Symposium on Hardware Oriented Security and Trust (HOST), 2025. DOI: 10.1109/HOST64725.2025.11050048.
+- **Mabon Ninan, Evan Nimmo, Shane Reilly, Channing Smith, Wenhai Sun, Boyang Wang, John M. Emmert.** “A Second Look at the Portability of Deep Learning Side-Channel Attacks over EM Traces.” In RAID ’24: The 27th International Symposium on Research in Attacks, Intrusions and Defenses, pp. 630–643. ACM, 2024. DOI: 10.1145/3678890.3678900.
+- **Haipeng Li, Mabon Ninan, Boyang Wang, John M. Emmert.** “TinyPower: Side-Channel Attacks with Tiny Neural Networks.” In 2024 IEEE International Symposium on Hardware Oriented Security and Trust (HOST), pp. 320–331. IEEE, 2024. DOI: 10.1109/HOST55342.2024.10545382.
+- **Andrew Kosikowski, Daniel Cho, Mabon Ninan, Anca Ralescu, Boyang Wang.** “EvilELF: Evasion Attacks on Deep-Learning Malware Detection over ELF Files.” In 2023 International Conference on Machine Learning and Applications (ICMLA), pp. 1702–1709. IEEE, 2023. DOI: 10.1109/ICMLA58977.2023.00258.
+- **Chenggang Wang, Mabon Ninan, Shane Reilly, Joel Ward, William Hawkins, Boyang Wang, John M. Emmert.** “Portability of Deep-Learning Side-Channel Attacks against Software Discrepancies.” In Proceedings of the 16th ACM Conference on Security and Privacy in Wireless and Mobile Networks (WiSec ’23), pp. 227–238. ACM, 2023. DOI: 10.1145/3558482.3590177.
+- **Logan Reichling, Mabon Ninan, Boyang Wang, John M. Emmert.** “Deep Learning Side-Channel Attacks: Challenges and Opportunities.” Book chapter in Advancements in Hardware Design and Trust, 2026.
+- **Shruti Hegde, Mabon Ninan, Jonathan R. Dillman, Shireen Hayatghaib, Elanchezhian Somasundaram.** “Evaluating Clinical NLP Services for Chest Radiograph Report Labeling: A Comparative Study on an Independent Pediatric Dataset.” Journal of Imaging Informatics in Medicine, June 2026.
+- **Shruti Hegde, Mabon Ninan, Jonathan R. Dillman, Shireen Hayatghaibi, Lynn Babcock, Elanchezhian Somasundaram.** “Can Modern NLP Systems Reliably Annotate Chest Radiography Exams? A Pre-Purchase Evaluation and Comparative Study of Solutions from AWS, Google, Azure, John Snow Labs, and Open-Source Models on an Independent Pediatric Dataset.” DOI: 10.21203/rs.3.rs-6772394/v1.
 
 ## Talks
 
