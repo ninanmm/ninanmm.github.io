@@ -9,95 +9,89 @@ redirect_from:
 
 ## About Me
 
-I’m a Second Year Ph.D. student in Computer Science at **Texas A&M University**, advised by [Dr. Marcus Botacin](https://marcusbotacin.github.io/). My research focuses on building **secure, interpretable, and robust machine learning systems** for real-world applications in **malware detection**, **embedded systems**, and **medical imaging**.
+I am a Ph.D. student in Computer Science at Texas A&M University, advised by [Dr. Marcus Botacin](https://marcusbotacin.github.io/). My research lies at the intersection of machine learning, cybersecurity, and trustworthy AI, with a focus on malware detection, embedded systems, and medical imaging.
 
-My goal is to bridge foundational work in **AI robustness and explainability** with practical deployments in **cybersecurity**.
-
----
-
-## Research Interests
---**Model Evolution & Reliability** - Systematically solving Concept Drift to ensure ML models remain effective as data distributions shift over time
---** Next-Gen Architectures**- Tinkering with Large Language Models (LLMs), Melted Neural Networks, and Brain-inspired Neural Networks
-- **Explainable AI (XAI)** – Interpretable ML models for malware detection and medical decision support  
-- **Adversarial Machine Learning** – Robust defenses against evasive malware and attacks on AI systems  
-- **Multimodal & Multi-View Learning** – Integrating binaries, APIs, YARA rules, and text for holistic detection  
-- **Self-Supervised & Unsupervised Learning** – Leveraging unlabeled data to adapt across domains  
-- **Side-Channel Attacks** – Understanding leakage and defense via deep learning over EM traces  
-- **Tiny Neural Networks & Model Compression** – Efficient models for embedded and low-power devices  
-- **Generative Models & Algorithmic Robustness** – Using generative AI to simulate malware and improve detectors  
-- **AI for Medical Imaging** – Interpretable and robust pediatric radiology models in collaboration with Cincinnati Children’s Hospital  
+My work develops secure, interpretable, and robust learning systems that operate effectively under real-world constraints such as concept drift, noise, limited resources, and adversarial conditions.
 
 ---
 
-## Academic Background
+## Research Focus
 
-I earned my **B.S. in Computer Engineering** from the **University of Cincinnati**, graduating **summa cum laude**. During undergrad, I worked with [Dr. Boyang Wang](https://homepages.uc.edu/~wang2ba/) on **domain adaptation** and **tiny neural networks**. That work led to multiple papers at top-tier conferences.
+- **Robust and Explainable Malware Detection** – Building models that remain reliable in evolving threat environments.
+- **Agentic and LLM-Assisted Security Systems** – Exploring self-healing and adaptive approaches for modern cybersecurity workflows.
+- **Side-Channel Attacks and Defenses** – Studying leakage behavior and designing efficient neural solutions for hardware security.
+- **Tiny Neural Networks** – Creating compact models for resource-constrained devices and embedded systems.
+- **Multimodal Medical AI** – Developing interpretable models for pediatric chest radiography and clinical report understanding.
 
 ---
 
-## Publications
+## Education
 
-I’ve published in major venues spanning security and AI, including:
+- **Ph.D. in Computer Science**, Texas A&M University, Aug. 2024 – Present
+  - Advisor: Dr. Marcus Botacin
+  - Thesis: Algorithms and Advanced Machine Learning for Cybersecurity
 
-- **RAID**, **IEEE HOST**, **ACM WiSec**,**IEEE NAECON** **ICMLA**
-- 📖 *Deep Learning Side-Channel Attacks: Challenges and Opportunities*, in  
-  **Advancements in Hardware Design and Trust**, CRC Press, ISBN: 9781032840420, 2025
+- **B.S. in Computer Engineering**, University of Cincinnati, Aug. 2020 – Apr. 2024
+  - Summa Cum Laude (3.953/4.00)
+  - Advisor: Dr. Boyang Wang
+  - Thesis: Domain Adaptation for Deep Learning Models and Tiny Neural Networks
 
-> 📚 Full list: [ninanmm.github.io/publications](https://ninanmm.github.io/publications/)
+---
+
+## Selected Publications
+
+- **SoK: If “Real Attackers Don’t Compute Gradients,” What Do They Do? Revisiting Adversarial Malware Evasion Using In-the-Wild Malware**
+- **AutoPYara: Next-Gen YARA Rule Gen**
+- **TinyRadio: Tiny Neural Networks for Fingerprinting Radio Frequency Signals**
+- **MicroPower: Micro Neural Networks for Side-Channel Attacks**
+- **A Second Look at the Portability of Deep Learning Side-Channel Attacks over EM Traces**
+
+> Full publication list: [ninanmm.github.io/publications](https://ninanmm.github.io/publications/)
 
 ---
 
 ## Research Experience
 
-**Texas A&M University** — *Research Assistant* (2024–Present)  
-- Developing interpretable malware detectors using federated learning  
-- Modeling cross-regional threat patterns via model distillation  
-- Developing malware detection for consumer systems aimed at achieving zero performance overhead
-- Enhancing the **AutoPYara** framework by integrating fuzzy hashing labels for better cluster initialization
+**Texas A&M University** — Research Assistant, 2024–Present
+- Designing interpretable malware detection methods for zero-overhead and real-world deployment scenarios.
+- Researching multi-model machine learning approaches for software-based malware detection.
+- Developing agentic malware detection systems and robust LLM-based analysis pipelines.
+- Investigating explainability and uncertainty in security models.
 
-**Cincinnati Children’s Hospital** — *Research Scientist* (2024)  
-- Building foundation models for pediatric chest X-rays  
-- Creating multi-modal evaluation metrics for radiology models  
+**Cincinnati Children’s Hospital Medical Center** — Research Scientist, 2024
+- Built multimodal systems for evaluating chest X-ray report generation and radiology workflows.
+- Developed foundation models for pediatric CXR imaging and interpretable clinical AI.
+- Evaluated commercial NLP services and medical labelers on pediatric datasets.
 
-**University of Cincinnati** — *Research Assistant, Data Security & Privacy Lab* (2022–2024)  
-- Designed pruning algorithms reducing model size by up to 98%  
-- Proposed RL-based architecture search for noisy environments  
-- Developed unsupervised training pipelines for domain adaptation  
-
----
-
-## Awards
-
-- 🏆 **Best Student Paper Award** – IEEE HOST 2024  
-- 🎓 **Undergraduate Research Fellowship** – University of Cincinnati, 2022,2023,2024 
+**University of Cincinnati** — Research Assistant, 2022–2024
+- Developed pruning methods that reduced model size by up to 98% for embedded deployment.
+- Explored domain adaptation, tiny neural networks, and side-channel trace analysis.
+- Supervised undergraduate students on a large public EM side-channel dataset.
 
 ---
 
-## Invited Talks
+## Awards and Recognition
 
-I've presented at several major academic conferences, including:
-
-- **RAID 2024** (Italy)  
-- **IEEE HOST 2024** (Washington, D.C.)  
-- **ACM WiSec 2023** (United Kingdom)  
-
-> 🎤 Slides & recordings: [ninanmm.github.io/talks](https://ninanmm.github.io/talks/)
+- 🏆 Best Student Paper Award, IEEE HOST 2024
+- 🎓 Undergraduate Research Fellowship, University of Cincinnati, 2022, 2023, 2024
 
 ---
 
 ## Academic Service
 
-- PC Member, 29th International Symposium on Research in Attacks, Intrusions and Defenses ([RAID 2026](https://raid2026.org/committees.html))
-- PC Member, 28th International Symposium on Research in Attacks, Intrusions and Defenses ([RAID 2025](https://raid2025.github.io/committees.html))
+- PC Member, RAID 2026
+- PC Member, RAID 2025
 - Reviewer, Computers & Security (COSE), 2026
-- PC Member, The 41st ACM/SIGAPP Symposium On Applied Computing
-- Artifact Evaluator: CCS 2025
+- PC Member, The 41st ACM/SIGAPP Symposium on Applied Computing
+- Artifact Evaluator, CCS 2025
 - PC Member, DSN 2026
 
 ---
 
-## Looking Ahead
+## Technical Skills
 
-I'm passionate about advancing trustworthy AI at the intersection of security, interpretability, and real-world impact. My long-term vision is to design AI systems that are safe, transparent, and resilient. Recently, I've been exploring novel neural network architectures, including Large Language Models (LLMs), Mixture-of-Experts networks, and biologically-inspired neural systems, with a focus on addressing concept drift in dynamic environments.
+- **Languages:** Python, C/C++, Assembly, SQL
+- **Machine Learning:** PyTorch, TensorFlow, Transformers, Scikit-learn, Computer Vision, NLP
+- **Security & Tools:** Malware Analysis, Reverse Engineering (ELF), AWS, Google Cloud, Azure, Docker, Git, Linux
 
-For collaborations, questions, or just to connect — feel free to [reach out](mailto:ninanmm@tamu.edu).
+For collaborations, questions, or just to connect, feel free to [reach out](mailto:ninanmm@tamu.edu).
