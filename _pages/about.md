@@ -55,7 +55,7 @@ I’ve published in major venues spanning security and AI, including:
 - Developing malware detection for consumer systems aimed at achieving zero performance overhead
 - Enhancing the **AutoPYara** framework by integrating fuzzy hashing labels for better cluster initialization
 
-**Cincinnati Children’s Hospital** — *Research Scientist* (2024–Present)  
+**Cincinnati Children’s Hospital** — *Research Scientist* (2024)  
 - Building foundation models for pediatric chest X-rays  
 - Creating multi-modal evaluation metrics for radiology models  
 
@@ -87,9 +87,12 @@ I've presented at several major academic conferences, including:
 
 ## Academic Service
 
-* **Program Committee Member**: [RAID 2025](https://raid2025.github.io/committees.html)
-* **Program Committee Member**: 41st ACM/SIGAPP Symposium On Applied Computing
-* **Artifact Evaluator**: CCS 2025
+- PC Member, 29th International Symposium on Research in Attacks, Intrusions and Defenses ([RAID 2026](https://raid2026.org/committees.html))
+- PC Member, 28th International Symposium on Research in Attacks, Intrusions and Defenses ([RAID 2025](https://raid2025.github.io/committees.html))
+- Reviewer, Computers & Security (COSE), 2026
+- PC Member, The 41st ACM/SIGAPP Symposium On Applied Computing
+- Artifact Evaluator: CCS 2025
+- PC Member, DSN 2026
 
 ---
 
