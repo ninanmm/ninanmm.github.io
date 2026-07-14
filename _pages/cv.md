@@ -9,6 +9,103 @@ redirect_from:
 
 {% include base_path %}
 
+<style>
+  .cv-page {
+    line-height: 1.7;
+    color: #1f2937;
+  }
+
+  .cv-page h2 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid #e5e7eb;
+    color: #0f172a;
+    font-size: 1.18rem;
+    letter-spacing: 0.01em;
+  }
+
+  .cv-page ul {
+    padding-left: 1.15rem;
+    margin-top: 0.45rem;
+  }
+
+  .cv-page li {
+    margin-bottom: 0.45rem;
+  }
+
+  .cv-page .cv-summary {
+    background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);
+    border: 1px solid #dbeafe;
+    border-radius: 1rem;
+    padding: 1rem 1.1rem;
+    margin: 0.2rem 0 1.1rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+  }
+
+  .cv-page .cv-summary p {
+    margin: 0;
+    color: #334155;
+  }
+
+  .cv-page .cv-section {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 1rem;
+    padding: 1rem 1.1rem;
+    margin: 0.9rem 0 1.2rem;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  }
+
+  .cv-page .cv-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #2563eb;
+    border-radius: 0.8rem;
+    padding: 0.95rem 1rem;
+    margin: 0.8rem 0 1.1rem;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  }
+
+  .cv-page .cv-card strong {
+    color: #0f172a;
+  }
+
+  .cv-page .cv-item-title {
+    font-size: 1.02rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .cv-page .cv-meta {
+    color: #475569;
+    font-size: 0.95rem;
+    display: block;
+    margin: 0.15rem 0 0.25rem;
+  }
+
+  .cv-page .cv-footnote {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-top: 0.2rem;
+  }
+
+  .cv-page .cv-entry {
+    margin-bottom: 0.75rem;
+  }
+
+  .cv-page a {
+    color: #1d4ed8;
+  }
+</style>
+
+<div class="cv-page">
+
+<div class="cv-summary">
+  <p><strong>Research profile:</strong> machine learning and security, with a focus on side-channel analysis, malware detection, explainable AI, and student mentorship.</p>
+</div>
+
+<div class="cv-section">
+
 ## Education
 
 - **Ph.D. in Computer Science**, Texas A&M University, Aug. 2024 – Present
@@ -20,6 +117,10 @@ redirect_from:
   - Summa Cum Laude (3.953/4.00)
   - Advisor: Dr. Boyang Wang
   - Thesis: Domain Adaptation for Deep Learning Models and Tiny Neural Networks
+
+</div>
+
+<div class="cv-section">
 
 ## Research Experience
 
@@ -38,6 +139,10 @@ redirect_from:
   - Explored domain adaptation, tiny neural networks, and side-channel trace analysis.
   - Supervised undergraduate students on a large public EM side-channel dataset.
 
+</div>
+
+<div class="cv-section">
+
 ## Publications
 
 
@@ -51,6 +156,10 @@ redirect_from:
 - **Shruti Hegde, Mabon Ninan, Jonathan R. Dillman, Shireen Hayatghaib, Elanchezhian Somasundaram.** “Evaluating Clinical NLP Services for Chest Radiograph Report Labeling: A Comparative Study on an Independent Pediatric Dataset.” Journal of Imaging Informatics in Medicine, June 2026.
 - **Shruti Hegde, Mabon Ninan, Jonathan R. Dillman, Shireen Hayatghaibi, Lynn Babcock, Elanchezhian Somasundaram.** “Can Modern NLP Systems Reliably Annotate Chest Radiography Exams? A Pre-Purchase Evaluation and Comparative Study of Solutions from AWS, Google, Azure, John Snow Labs, and Open-Source Models on an Independent Pediatric Dataset.” DOI: 10.21203/rs.3.rs-6772394/v1.
 
+</div>
+
+<div class="cv-section">
+
 ## Talks
 
 - CSCE Graduate Seminar, Texas A&M University, Feb. 2026
@@ -58,6 +167,10 @@ redirect_from:
 - RAID 2024, Padua, Italy, Sep. 2024
 - IEEE HOST 2024, Washington, D.C., May 2024
 - WiSec 2023, Guildford, United Kingdom, May 2023
+
+</div>
+
+<div class="cv-section">
 
 ## Academic Service
 
@@ -67,13 +180,61 @@ redirect_from:
 - PC Member, The 41st ACM/SIGAPP Symposium on Applied Computing
 - Artifact Evaluator, CCS 2025
 
+</div>
+
+<div class="cv-section">
+
 ## Technical Skills
 
 - **Languages:** Python, C/C++, Assembly, SQL
 - **Machine Learning:** PyTorch, TensorFlow, Transformers, Scikit-learn, Computer Vision, NLP
 - **Security & Tools:** Malware Analysis, Reverse Engineering (ELF), AWS, Google Cloud, Azure, Docker, Git, Linux
 
+</div>
+
+<div class="cv-section">
+
+## Co-Advised Students
+
+<div class="cv-card">
+  <p class="cv-item-title"><strong>Selected undergraduate and REU mentees</strong></p>
+  <ul>
+    <li class="cv-entry">
+      <strong><a href="https://scholar.google.com/citations?user=DnzsD78AAAAJ&hl=en">Ryan Evans</a></strong> — May 2023–June 2024, NSF REU Site, University of Cincinnati<br/>
+      <span class="cv-meta">First job: Machine Learning Engineer, Medpace</span>
+      <span class="cv-footnote">Papers: <a href="https://doi.org/10.1109/HOST64725.2025.11050048">MicroPower</a>; <a href="https://doi.org/10.1109/NAECON65708.2025.11235437">TinyRadio</a></span>
+    </li>
+    <li class="cv-entry">
+      <strong><a href="https://www.linkedin.com/in/muhibkhn/">Muhib Khan</a></strong> — Dec. 2023–June 2024, University of Cincinnati, Class of 2025<br/>
+      <span class="cv-meta">First job: Platform Engineer, IBM</span>
+      <span class="cv-footnote">Paper contributions: not publicly listed yet.</span>
+    </li>
+    <li class="cv-entry">
+      <strong><a href="https://www.linkedin.com/in/evan-nimmo/">Evan Nimmo</a></strong> — May 2023–July 2023, NSF REU Site, University of Cincinnati, Class of 2025<br/>
+      <span class="cv-meta">First job: Junior Hardware Embedded Security Engineer, Riverside Research</span>
+      <span class="cv-footnote">Paper: <a href="https://doi.org/10.1145/3678890.3678900">A Second Look at the Portability of Deep Learning Side-Channel Attacks over EM Traces</a></span>
+    </li>
+    <li class="cv-entry">
+      <strong><a href="https://www.linkedin.com/in/andrew-kosikowski/">Andrew Kosikowski</a></strong> — May 2023–July 2023, NSF REU Site, Rose-Hulman Institute of Technology, Class of 2024<br/>
+      <span class="cv-meta">First job: EO/IR Systems Engineer, MIT Lincoln Laboratory</span>
+      <span class="cv-footnote">Paper: <a href="https://doi.org/10.1109/ICMLA58977.2023.00258">EvilELF: Evasion Attacks on Deep-Learning Malware Detection over ELF Files</a></span>
+    </li>
+    <li class="cv-entry">
+      <strong><a href="https://www.linkedin.com/in/danieljunsangcho/">Daniel Cho</a></strong> — May 2023–July 2023, NSF REU Site, Hamilton College, Class of 2025<br/>
+      <span class="cv-footnote">Paper: <a href="https://doi.org/10.1109/ICMLA58977.2023.00258">EvilELF: Evasion Attacks on Deep-Learning Malware Detection over ELF Files</a></span>
+    </li>
+  </ul>
+</div>
+
+</div>
+
+<div class="cv-section">
+
 ## Mentoring
 
 - Co-advised undergraduate researchers on side-channel security, malware analysis, and machine learning projects.
 - Mentored students who have gone on to roles in industry and research labs.
+
+</div>
+
+</div>
