@@ -40,8 +40,6 @@ My work develops secure, interpretable, and robust learning systems that operate
 
 ## Selected Publications
 
-- **SoK: If “Real Attackers Don’t Compute Gradients,” What Do They Do? Revisiting Adversarial Malware Evasion Using In-the-Wild Malware**
-- **AutoPYara: Next-Gen YARA Rule Gen**
 - **TinyRadio: Tiny Neural Networks for Fingerprinting Radio Frequency Signals**
 - **MicroPower: Micro Neural Networks for Side-Channel Attacks**
 - **A Second Look at the Portability of Deep Learning Side-Channel Attacks over EM Traces**
