@@ -18,4 +18,31 @@
 <!-- For all browsers -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/main.css">
 
+<!-- Theme initialization - placed early to prevent flash -->
+<script>
+  (function() {
+    const STORAGE_KEY = 'theme-preference';
+    const THEME_ATTR = 'data-theme';
+    
+    function getStoredTheme() {
+      try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        return stored && ['light', 'dark'].includes(stored) ? stored : null;
+      } catch (e) {
+        return null;
+      }
+    }
+    
+    function getSystemTheme() {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        return 'dark';
+      }
+      return 'light';
+    }
+    
+    const theme = getStoredTheme() || getSystemTheme();
+    document.documentElement.setAttribute(THEME_ATTR, theme);
+  })();
+</script>
+
 <meta http-equiv="cleartype" content="on">

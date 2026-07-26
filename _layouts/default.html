@@ -1,7 +1,3 @@
----
-layout: compress
----
-
 {% include base_path %}
 
 <!doctype html>
@@ -14,9 +10,18 @@ layout: compress
   <body>
 
     {% include browser-upgrade.html %}
+    
+    <!-- Dark mode toggle button -->
+    <button class="theme-toggle" data-theme-toggle title="Toggle dark mode" aria-label="Toggle dark mode">
+      <span class="theme-icon">🌙</span>
+    </button>
+
     {% include masthead.html %}
 
-    {{ content }}
+    <!-- Main content with animation -->
+    <div class="page__wrapper" data-animate="fade-in-up">
+      {{ content }}
+    </div>
 
     <div class="page__footer">
       <footer>
@@ -26,6 +31,13 @@ layout: compress
     </div>
 
     {% include scripts.html %}
+    
+    <!-- Load theme manager -->
+    <script src="{{ base_path }}/assets/js/theme-manager.js"></script>
+    
+    <!-- Load animations -->
+    <script src="{{ base_path }}/assets/js/scroll-reveal.js"></script>
+    <script src="{{ base_path }}/assets/js/background-animation.js"></script>
 
   </body>
 </html>
