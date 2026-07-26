@@ -1,0 +1,135 @@
+// ============================================================================
+// Theme Utilities - Accessibility and Responsive Helpers
+// ============================================================================
+
+// High contrast mode support
+@media (prefers-contrast: more) {
+  :root {
+    --color-text-secondary: var(--color-text-primary);
+    --color-border-light: var(--color-border-medium);
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// Theme transition class
+// Applied to body to enable smooth theme switching
+.theme-transitioning {
+  * {
+    transition: background-color var(--transition-base),
+                color var(--transition-base),
+                border-color var(--transition-base),
+                box-shadow var(--transition-base) !important;
+  }
+}
+
+// Utility classes for theme-aware styling
+.bg-primary {
+  background-color: var(--color-bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-bg-secondary);
+}
+
+.bg-tertiary {
+  background-color: var(--color-bg-tertiary);
+}
+
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.border {
+  border-color: var(--color-border-light);
+}
+
+.border-accent {
+  border-color: var(--color-border-accent);
+}
+
+// Neon glow effects (only in dark mode or on dark backgrounds)
+.neon-glow-cyan {
+  color: var(--color-neon-cyan);
+  text-shadow: 0 0 10px rgba(0, 213, 255, 0.5),
+               0 0 20px rgba(0, 213, 255, 0.3);
+}
+
+.neon-glow-purple {
+  color: var(--color-neon-purple);
+  text-shadow: 0 0 10px rgba(181, 0, 255, 0.5),
+               0 0 20px rgba(181, 0, 255, 0.3);
+}
+
+.neon-glow-green {
+  color: var(--color-neon-green);
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5),
+               0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+// Cybersecurity aesthetic helpers
+.cyber-border {
+  border: 1px solid var(--color-border-accent);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-primary-accent), transparent);
+    opacity: 0.5;
+  }
+}
+
+// Accessible focus styles
+.focus-visible-custom {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  @extend .focus-visible-custom;
+}
+
+// Skip to main content (accessibility)
+.skip-to-main {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-primary);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: var(--z-index-tooltip);
+
+  &:focus {
+    top: 0;
+  }
+}
