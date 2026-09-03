@@ -74,15 +74,18 @@ author:
   zhihu            : # Username
 
 # Publication Category - The following the list of publication categories and their headings
+# Order here is the order the sections appear on /publications/.
+# A publication whose `category:` is not a key below renders NOWHERE, so add
+# the key here first when introducing a new type.
 publication_category:
-  books:
-    title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'
-  journals:
-    title: 'Journal Articles'
   conferences:
     title: 'Conference Papers'
+  manuscripts:
+    title: 'Journal Articles'
+  books:
+    title: 'Book Chapters'
+  preprints:
+    title: 'Preprints & Under Review'
 
 # Site Settings
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -158,6 +161,7 @@ include:
   - _pages
   - files
 exclude:
+  - cloudflare
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache

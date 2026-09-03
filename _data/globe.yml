@@ -1,0 +1,42 @@
+# Fallback pins for the globe in the site footer band.
+#
+# These render whenever live visitor data is unavailable (no Cloudflare worker
+# deployed yet, request blocked, or the visitor is offline), so the globe is
+# never empty or broken. They are the places this research has actually gone:
+# conference venues and affiliations.
+#
+# Once cloudflare/visitor-worker.js is deployed, set `visitor_api` below to its
+# URL and the globe switches to real visitor countries, keeping these as backup.
+
+visitor_api:   # e.g. "https://ninanmm-visitors.<your-subdomain>.workers.dev"
+
+pins:
+  - place: "College Station, TX"
+    detail: "Texas A&M University"
+    lat: 30.6280
+    lon: -96.3344
+    home: true
+  - place: "Cincinnati, OH"
+    detail: "University of Cincinnati / Cincinnati Children's"
+    lat: 39.1031
+    lon: -84.5120
+  - place: "Padua, Italy"
+    detail: "RAID 2024"
+    lat: 45.4064
+    lon: 11.8768
+  - place: "Guildford, UK"
+    detail: "WiSec 2023"
+    lat: 51.2362
+    lon: -0.5704
+  - place: "Washington, D.C."
+    detail: "IEEE HOST 2024"
+    lat: 38.9072
+    lon: -77.0369
+  - place: "Connecticut, USA"
+    detail: "CHEST Annual Conference 2024"
+    lat: 41.6032
+    lon: -73.0877
+  - place: "Jacksonville, FL"
+    detail: "ICMLA 2023"
+    lat: 30.3322
+    lon: -81.6557

@@ -1,0 +1,11 @@
+# Local preview overrides. Layer this on top of _config.yml:
+#
+#   bundle exec jekyll serve --config _config.yml,_config.dev.yml
+#
+# Why this exists: _includes/base_path builds every asset and link URL from
+# site.url, so with the production url in _config.yml a local server still
+# pulls CSS and JS from https://ninanmm.github.io. You end up previewing the
+# DEPLOYED stylesheet and none of your local changes show up. Overriding url
+# points everything back at the dev server.
+url: "http://localhost:4000"
+baseurl: ""

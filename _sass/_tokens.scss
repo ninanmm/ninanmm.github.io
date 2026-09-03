@@ -1,0 +1,173 @@
+/* ==========================================================================
+   DESIGN TOKENS
+   Runtime-switchable custom properties. Light is the bare :root default so
+   the page renders correctly before any JS runs; [data-theme] wins in both
+   directions so the toggle can override the system preference.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* Surfaces */
+  --bg:              #fbfbf9;
+  --bg-subtle:       #f4f4f1;
+  --surface:         #ffffff;
+  --surface-hover:   #fafaf8;
+  --surface-sunken:  #f7f7f4;
+
+  /* Text */
+  --text:            #17191d;
+  --text-muted:      #5a616c;
+  --text-subtle:     #848b96;
+  --text-inverse:    #ffffff;
+
+  /* Lines */
+  --border:          #e4e3de;
+  --border-strong:   #cfcec8;
+
+  /* Accent — indigo/blue primary */
+  --accent:          #1c46b8;
+  --accent-hover:    #16389a;
+  --accent-soft:     #eaefff;
+  --accent-border:   #c2d0f7;
+  --accent-text:     #1c46b8;
+
+  /* Secondary — maroon, nods to Texas A&M */
+  --maroon:          #7a1420;
+  --maroon-soft:     #fdecee;
+  --maroon-border:   #f3ccd1;
+
+  /* Semantic */
+  --award:           #8a5a00;
+  --award-soft:      #fdf3dc;
+  --award-border:    #efdcae;
+  --code-accent:     #146b46;
+  --code-soft:       #e6f5ee;
+  --code-border:     #b9e0cd;
+
+  /* Elevation */
+  --shadow-sm:  0 1px 2px rgba(16, 18, 22, 0.05);
+  --shadow-md:  0 2px 4px rgba(16, 18, 22, 0.05), 0 6px 16px rgba(16, 18, 22, 0.05);
+  --shadow-lg:  0 4px 8px rgba(16, 18, 22, 0.05), 0 16px 40px rgba(16, 18, 22, 0.08);
+  --ring:       0 0 0 3px rgba(28, 70, 184, 0.28);
+
+  /* Type */
+  --font-display: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --font-sans:    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Radii */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 20px;
+  --r-full: 999px;
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 120ms;
+  --dur: 220ms;
+  --dur-slow: 420ms;
+
+  /* Layout */
+  --measure: 68ch;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg:              #0e1116;
+  --bg-subtle:       #131720;
+  --surface:         #161b23;
+  --surface-hover:   #1c222c;
+  --surface-sunken:  #11151c;
+
+  --text:            #e7eaef;
+  --text-muted:      #9aa4b2;
+  --text-subtle:     #6f7987;
+  --text-inverse:    #0e1116;
+
+  --border:          #262d38;
+  --border-strong:   #38404d;
+
+  --accent:          #7ba3f8;
+  --accent-hover:    #9dbcff;
+  --accent-soft:     #16203a;
+  --accent-border:   #2c3f6b;
+  --accent-text:     #9dbcff;
+
+  --maroon:          #e79aa3;
+  --maroon-soft:     #2a1418;
+  --maroon-border:   #4d2129;
+
+  --award:           #e0b465;
+  --award-soft:      #2a2113;
+  --award-border:    #4d3d1c;
+
+  --code-accent:     #5fd0a0;
+  --code-soft:       #10261d;
+  --code-border:     #1e4636;
+
+  --shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md:  0 2px 4px rgba(0, 0, 0, 0.35), 0 6px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg:  0 4px 8px rgba(0, 0, 0, 0.35), 0 16px 40px rgba(0, 0, 0, 0.5);
+  --ring:       0 0 0 3px rgba(123, 163, 248, 0.35);
+}
+
+/* System preference, only when the visitor has not chosen explicitly. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --bg:              #0e1116;
+    --bg-subtle:       #131720;
+    --surface:         #161b23;
+    --surface-hover:   #1c222c;
+    --surface-sunken:  #11151c;
+
+    --text:            #e7eaef;
+    --text-muted:      #9aa4b2;
+    --text-subtle:     #6f7987;
+    --text-inverse:    #0e1116;
+
+    --border:          #262d38;
+    --border-strong:   #38404d;
+
+    --accent:          #7ba3f8;
+    --accent-hover:    #9dbcff;
+    --accent-soft:     #16203a;
+    --accent-border:   #2c3f6b;
+    --accent-text:     #9dbcff;
+
+    --maroon:          #e79aa3;
+    --maroon-soft:     #2a1418;
+    --maroon-border:   #4d2129;
+
+    --award:           #e0b465;
+    --award-soft:      #2a2113;
+    --award-border:    #4d3d1c;
+
+    --code-accent:     #5fd0a0;
+    --code-soft:       #10261d;
+    --code-border:     #1e4636;
+
+    --shadow-sm:  0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md:  0 2px 4px rgba(0, 0, 0, 0.35), 0 6px 16px rgba(0, 0, 0, 0.4);
+    --shadow-lg:  0 4px 8px rgba(0, 0, 0, 0.35), 0 16px 40px rgba(0, 0, 0, 0.5);
+    --ring:       0 0 0 3px rgba(123, 163, 248, 0.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur: 0ms;
+    --dur-slow: 0ms;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

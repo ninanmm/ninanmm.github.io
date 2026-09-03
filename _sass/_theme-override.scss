@@ -1,0 +1,496 @@
+/* ==========================================================================
+   THEME OVERRIDE LAYER
+   Minimal Mistakes hardcodes light colors throughout _sass/. This layer
+   re-points its selectors at the runtime tokens in _tokens.scss so that
+   dark mode works without forking the upstream partials. Imported LAST in
+   main.scss, so equal-specificity rules win.
+   ========================================================================== */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  background-color: var(--bg);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "kern" 1, "liga" 1, "cv11" 1;
+  transition: background-color var(--dur) var(--ease), color var(--dur) var(--ease);
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--accent-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+
+/* --------------------------------------------------------------- Typography */
+
+h1, h2, h3, h4, h5, h6,
+.page__title,
+.archive__item-title,
+.author__name {
+  font-family: var(--font-display);
+  color: var(--text);
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  line-height: 1.22;
+  text-wrap: balance;
+}
+
+.page__title {
+  font-size: 2.1rem;
+  margin: 0 0 0.35em;
+}
+
+.page__content {
+  color: var(--text);
+  font-size: 1.0125rem;
+
+  h1, h2, h3, h4, h5, h6 { color: var(--text); }
+
+  h2 {
+    font-size: 1.6rem;
+    margin-top: 2.4rem;
+    margin-bottom: 0.7rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  h3 {
+    font-size: 1.28rem;
+    margin-top: 1.9rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 0;
+  }
+
+  h4 { font-size: 1.1rem; margin-top: 1.5rem; }
+
+  p, li {
+    line-height: 1.72;
+    color: var(--text);
+  }
+
+  p { margin: 0 0 1.05em; }
+
+  ul, ol { margin-bottom: 1.05em; }
+  li { margin-bottom: 0.35em; }
+
+  a {
+    color: var(--accent-text);
+    text-decoration: none;
+    text-underline-offset: 2px;
+    transition: color var(--dur-fast) var(--ease);
+
+    &:hover, &:focus {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    &:visited { color: var(--accent-text); }
+  }
+
+  strong { color: var(--text); font-weight: 650; }
+  em { color: var(--text); }
+
+  hr {
+    border: 0;
+    border-top: 1px solid var(--border);
+    margin: 2rem 0;
+  }
+}
+
+a { color: var(--accent-text); }
+
+blockquote {
+  border-left: 3px solid var(--accent-border);
+  background: var(--surface-sunken);
+  border-radius: 0 var(--r-md) var(--r-md) 0;
+  padding: 0.75rem 1.1rem;
+  margin: 1.4rem 0;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-style: normal;
+}
+
+.page__meta, .page__date, .page__meta-title {
+  color: var(--text-subtle);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  letter-spacing: 0.01em;
+}
+
+/* --------------------------------------------------------------- Code */
+
+code, kbd, samp, pre, tt {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  font-variant-ligatures: none;
+}
+
+code {
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 0.12em 0.36em;
+  color: var(--text);
+}
+
+pre, .highlight, div.highlighter-rouge, figure.highlight {
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  color: var(--text);
+}
+
+pre code, .highlight code, .highlight pre {
+  background: transparent;
+  border: 0;
+  padding: 0;
+}
+
+/* --------------------------------------------------------------- Tables */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.94rem;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+}
+
+thead { background: var(--surface-sunken); }
+
+th, td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.55rem 0.7rem;
+  color: var(--text);
+  text-align: left;
+}
+
+th { font-weight: 650; color: var(--text); }
+tbody tr:last-child td { border-bottom: 0; }
+
+/* --------------------------------------------------------------- Masthead */
+
+.masthead {
+  background: color-mix(in srgb, var(--bg) 86%, transparent);
+  -webkit-backdrop-filter: saturate(180%) blur(12px);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid var(--border);
+  box-shadow: none;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+/* Fallback for browsers without color-mix() */
+@supports not (background: color-mix(in srgb, red 50%, blue)) {
+  .masthead { background: var(--bg); }
+}
+
+.masthead__inner-wrap { padding: 0.6em 1em; }
+
+.masthead__menu-item--lg a {
+  font-family: var(--font-display);
+  font-weight: 650;
+  letter-spacing: -0.015em;
+}
+
+.greedy-nav {
+  background: transparent;
+
+  a {
+    color: var(--text-muted);
+    font-size: 0.93rem;
+    font-weight: 500;
+    border-radius: var(--r-sm);
+    transition: color var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease);
+
+    &:hover, &:focus { color: var(--accent-text); }
+  }
+
+  .visible-links a::before { background: var(--accent); height: 2px; }
+
+  /* Reserve room at the right edge for the theme toggle. */
+  padding-right: 2.7rem;
+
+  /* The hamburger only. Excluding .theme-toggle matters: the upstream
+     `.greedy-nav button` rule is more specific than a bare `.theme-toggle`
+     class and would otherwise dictate the toggle's size and position. */
+  > button:not(.theme-toggle) {
+    right: 2.7rem;
+    background: var(--surface-sunken);
+    border: 1px solid var(--border);
+    border-radius: var(--r-sm);
+    color: var(--text);
+
+    &:hover { background: var(--surface-hover); }
+  }
+
+  .hidden-links {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-md);
+    box-shadow: var(--shadow-lg);
+
+    a { color: var(--text); &:hover { background: var(--surface-hover); color: var(--accent-text); } }
+    li { border-bottom: 1px solid var(--border); &:last-child { border-bottom: 0; } }
+
+    &::before { border-bottom-color: var(--border); }
+    &::after  { border-bottom-color: var(--surface); }
+  }
+}
+
+/* --------------------------------------------------------------- Sidebar / author */
+
+.sidebar {
+  color: var(--text);
+
+  p, li { font-size: 0.88rem; }
+  h3, h4 { color: var(--text); }
+}
+
+.author__avatar img {
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-md);
+  max-width: 190px;
+}
+
+.author__content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 0.9rem 1rem;
+}
+
+.author__name {
+  font-size: 1.18rem;
+  margin: 0 0 0.15rem;
+}
+
+.author__pronouns {
+  color: var(--text-subtle);
+  font-size: 0.78rem;
+  margin: 0 0 0.35rem;
+  letter-spacing: 0.02em;
+}
+
+.author__bio {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Below the sidebar breakpoint the profile collapses into table cells with a
+   36px avatar. The carded background reads as a stray box next to an avatar
+   that small, so drop the card and let it sit as plain text. */
+@media screen and (max-width: 925px) {
+  .author__avatar img {
+    max-width: 58px;
+    border-radius: var(--r-md);
+    box-shadow: none;
+  }
+
+  .author__content {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: 0 0 0 0.2rem;
+  }
+
+  .author__name { font-size: 1.02rem; }
+  .author__bio { font-size: 0.82rem; }
+}
+
+.author__urls-wrapper button {
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  color: var(--text-inverse);
+  border-radius: var(--r-full);
+  font-size: 0.85rem;
+  font-weight: 550;
+
+  &:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+}
+
+:root[data-theme="dark"] .author__urls-wrapper button,
+.author__urls-wrapper button {
+  color: #fff;
+}
+
+.author__urls {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-lg);
+
+  li { border-bottom: 1px solid var(--border); &:last-child { border-bottom: 0; } }
+
+  a {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    border-radius: var(--r-sm);
+    &:hover { color: var(--accent-text); }
+  }
+
+  &::before { border-bottom-color: var(--border); }
+  &::after  { border-bottom-color: var(--surface); }
+}
+
+/* --------------------------------------------------------------- Archive items */
+
+.archive__item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 1.05rem 1.2rem;
+  margin-bottom: 0.9rem;
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
+
+  &:hover {
+    border-color: var(--border-strong);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+}
+
+.archive__item-title {
+  font-size: 1.16rem;
+  margin: 0 0 0.3rem;
+
+  a { color: var(--text); text-decoration: none; &:hover { color: var(--accent-text); } }
+}
+
+.archive__item-excerpt {
+  color: var(--text-muted);
+  font-size: 0.94rem;
+}
+
+.archive__subtitle {
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-display);
+}
+
+/* --------------------------------------------------------------- Buttons */
+
+.btn {
+  border-radius: var(--r-full);
+  font-family: var(--font-sans);
+  font-weight: 550;
+  font-size: 0.88rem;
+  transition: all var(--dur-fast) var(--ease);
+}
+
+.btn--inverse {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  &:hover { background: var(--surface-hover); border-color: var(--border-strong); color: var(--text); }
+}
+
+/* --------------------------------------------------------------- Notices */
+
+.notice, .notice--primary, .notice--info, .notice--warning, .notice--success, .notice--danger {
+  background: var(--surface-sunken);
+  border-radius: var(--r-md);
+  color: var(--text);
+  box-shadow: none;
+}
+
+/* --------------------------------------------------------------- Footer */
+
+.page__footer {
+  background: var(--bg-subtle);
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  margin-top: 3rem;
+
+  footer { padding-top: 1.5rem; padding-bottom: 1.5rem; }
+
+  a { color: var(--text-muted); &:hover { color: var(--accent-text); } }
+}
+
+.page__footer-copyright { color: var(--text-subtle); font-size: 0.8rem; }
+
+.page__footer-follow {
+  .social-icons a { color: var(--text-muted); &:hover { color: var(--accent-text); } }
+  li { color: var(--text-subtle); }
+}
+
+/* --------------------------------------------------------------- Pagination / taxonomy */
+
+.pagination {
+  li a {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    border-radius: var(--r-sm);
+    &:hover { background: var(--surface-hover); color: var(--accent-text); }
+  }
+  li.active a, li a.current { background: var(--accent); border-color: var(--accent); color: #fff; }
+}
+
+.page__taxonomy .page__taxonomy-item {
+  background: var(--surface-sunken);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: var(--r-full);
+  &:hover { background: var(--accent-soft); color: var(--accent-text); border-color: var(--accent-border); }
+}
+
+.breadcrumbs .current { color: var(--text-subtle); }
+
+/* --------------------------------------------------------------- Misc theme fixes */
+
+.page__hero--overlay { background-color: var(--bg-subtle); }
+
+.social-share a { border-radius: var(--r-full); }
+
+.toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-sm);
+
+  .nav__title { background: var(--accent); color: #fff; border-radius: var(--r-md) var(--r-md) 0 0; }
+  a { color: var(--text-muted); &:hover { background: var(--surface-hover); color: var(--accent-text); } }
+  li { border-bottom: 1px solid var(--border); &:last-child { border-bottom: 0; } }
+}
+
+/* Skip link for keyboard users */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.6rem 1rem;
+  border-radius: 0 0 var(--r-md) 0;
+  font-size: 0.9rem;
+  font-weight: 550;
+
+  &:focus {
+    left: 0;
+    color: #fff;
+  }
+}

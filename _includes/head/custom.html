@@ -2,30 +2,35 @@
 
 <!-- start custom head snippets -->
 
-<link rel="apple-touch-icon" sizes="57x57" href="{{ base_path }}/images/apple-touch-icon-57x57.png?v=M44lzPylqQ">
-<link rel="apple-touch-icon" sizes="60x60" href="{{ base_path }}/images/apple-touch-icon-60x60.png?v=M44lzPylqQ">
-<link rel="apple-touch-icon" sizes="72x72" href="{{ base_path }}/images/apple-touch-icon-72x72.png?v=M44lzPylqQ">
-<link rel="apple-touch-icon" sizes="76x76" href="{{ base_path }}/images/apple-touch-icon-76x76.png?v=M44lzPylqQ">
-<link rel="apple-touch-icon" sizes="114x114" href="{{ base_path }}/images/apple-touch-icon-114x114.png?v=M44lzPylqQ">
-<link rel="apple-touch-icon" sizes="120x120" href="{{ base_path }}/images/apple-touch-icon-120x120.png?v=M44lzPylqQ">
-<link rel="apple-touch-icon" sizes="144x144" href="{{ base_path }}/images/apple-touch-icon-144x144.png?v=M44lzPylqQ">
-<link rel="apple-touch-icon" sizes="152x152" href="{{ base_path }}/images/apple-touch-icon-152x152.png?v=M44lzPylqQ">
-<link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/images/apple-touch-icon-180x180.png?v=M44lzPylqQ">
-<link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-32x32.png?v=M44lzPylqQ" sizes="32x32">
-<link rel="icon" type="image/png" href="{{ base_path }}/images/android-chrome-192x192.png?v=M44lzPylqQ" sizes="192x192">
-<link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-96x96.png?v=M44lzPylqQ" sizes="96x96">
-<link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-16x16.png?v=M44lzPylqQ" sizes="16x16">
-<link rel="manifest" href="{{ base_path }}/images/manifest.json?v=M44lzPylqQ">
-<link rel="mask-icon" href="{{ base_path }}/images/safari-pinned-tab.svg?v=M44lzPylqQ" color="#000000">
-<link rel="shortcut icon" href="/images/favicon.ico?v=M44lzPylqQ">
-<meta name="msapplication-TileColor" content="#000000">
-<meta name="msapplication-TileImage" content="{{ base_path }}/images/mstile-144x144.png?v=M44lzPylqQ">
-<meta name="msapplication-config" content="{{ base_path }}/images/browserconfig.xml?v=M44lzPylqQ">
-<meta name="theme-color" content="#ffffff">
+<!-- Icons. Only files that actually exist in /images are referenced here;
+     the previous list pointed at apple-touch-icon-*/favicon-16x16/32x32/96x96
+     and android-chrome-192x192, none of which are in the repo, so every one
+     of those requests 404'd. -->
+<link rel="shortcut icon" href="{{ base_path }}/images/favicon.ico">
+<link rel="icon" href="{{ base_path }}/images/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ base_path }}/images/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ base_path }}/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="{{ base_path }}/images/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ base_path }}/images/android-chrome-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/images/apple-touch-icon.png">
+<link rel="mask-icon" href="{{ base_path }}/images/safari-pinned-tab.svg" color="#1c46b8">
+<link rel="manifest" href="{{ base_path }}/images/manifest.json">
+<meta name="msapplication-TileColor" content="#1c46b8">
+<meta name="msapplication-TileImage" content="{{ base_path }}/images/mstile-144x144.png">
+<meta name="msapplication-config" content="{{ base_path }}/images/browserconfig.xml">
+
+<!-- Address bar colour follows the active theme -->
+<meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1116" media="(prefers-color-scheme: dark)">
+
+<!-- Typefaces: Source Serif 4 (display), Inter (UI), JetBrains Mono (data) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&display=swap">
+
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
 
-
-<!-- Support for MatJax -->
+<!-- MathJax -->
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 

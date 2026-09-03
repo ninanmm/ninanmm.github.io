@@ -1,16 +1,49 @@
 ---
 layout: archive
-title: "Talks and presentations"
+title: "Talks & Presentations"
 permalink: /talks/
 author_profile: true
 ---
 
+{% include base_path %}
+
+<p class="lede">
+  Conference presentations and invited seminars, most recent first.
+</p>
+
 {% if site.talkmap_link == true %}
-
-<p style="text-decoration:underline;"><a href="/talkmap.html">See a map of all the places I've given a talk!</a></p>
-
+  <div class="hero__actions" style="margin:1rem 0 0;">
+    <a class="action action--sm" href="{{ base_path }}/talkmap.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>
+      See a map of every talk
+    </a>
+  </div>
 {% endif %}
 
-{% for post in site.talks reversed %}
-  {% include archive-single-talk.html %}
+{% assign by_year = site.talks | sort: "date" | reverse | group_by_exp: "t", "t.date | date: '%Y'" %}
+
+{% for group in by_year %}
+  <div class="section-head">
+    <h2>{{ group.name }}</h2>
+    <span class="section-head__meta">{{ group.items | size }} {% if group.items.size == 1 %}talk{% else %}talks{% endif %}</span>
+  </div>
+
+  <ul class="pub-list">
+    {% for post in group.items %}
+      <li class="pub">
+        <div class="pub__meta">
+          {% if post.type %}<span class="badge badge--venue">{{ post.type }}</span>{% endif %}
+          <span class="badge badge--year">{{ post.date | date: "%b %Y" }}</span>
+        </div>
+        <h3 class="pub__title"><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
+        {% if post.venue %}<p class="pub__venue">{{ post.venue }}</p>{% endif %}
+        {% if post.location %}
+          <p class="pub__authors">
+            <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-1px;"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            {{ post.location }}
+          </p>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
 {% endfor %}
