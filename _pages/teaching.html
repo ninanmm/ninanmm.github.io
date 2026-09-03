@@ -7,5 +7,57 @@ author_profile: true
 
 {% include base_path %}
 
-<h2 style="margin-top: 0.2rem; margin-bottom: 0.6rem;"><strong>Teaching Experience</strong></h2>
-<p style="margin: 0; line-height: 1.6;"><strong>Calculus Physics 2001</strong> (Spring 2022), <strong>General Chemistry 1040</strong> (Fall 2021, Fall 2022) <em>University of Cincinnati</em></p>
+<p class="lede">
+  Supplementary instruction at the University of Cincinnati Learning Commons, where I ran
+  group problem-solving sessions and later coordinated the instructors who did.
+</p>
+
+<ul class="metrics">
+  <li class="metric metric--accent">
+    <span class="metric__value">35</span>
+    <span class="metric__label">Instructors Coordinated</span>
+    <span class="metric__note">from May 2022</span>
+  </li>
+  <li class="metric">
+    <span class="metric__value">{{ site.teaching | size }}</span>
+    <span class="metric__label">Courses Supported</span>
+  </li>
+  <li class="metric">
+    <span class="metric__value">3</span>
+    <span class="metric__label">Semesters</span>
+    <span class="metric__note">2021&ndash;2022</span>
+  </li>
+</ul>
+
+<div class="section-head">
+  <h2>Courses</h2>
+  <span class="section-head__meta">University of Cincinnati</span>
+</div>
+
+<ul class="pub-list">
+  {% assign courses = site.teaching | sort: "date" | reverse %}
+  {% for post in courses %}
+    <li class="pub">
+      <div class="pub__meta">
+        <span class="badge badge--venue">{{ post.type }}</span>
+        <span class="badge badge--year">{% if post.end_date %}{{ post.date | date: "%Y" }}&ndash;{{ post.end_date | slice: -4, 4 }}{% else %}{{ post.date | date: "%Y" }}{% endif %}</span>
+      </div>
+      <h3 class="pub__title"><a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a></h3>
+      <p class="pub__venue">{{ post.venue }}{% if post.location %} &middot; {{ post.location }}{% endif %}</p>
+      {% if post.excerpt %}<p class="pub__summary">{{ post.excerpt | markdownify | strip_html | strip_newlines }}</p>{% endif %}
+    </li>
+  {% endfor %}
+</ul>
+
+<div class="section-head">
+  <h2>Mentoring</h2>
+  <span class="section-head__meta">{{ site.data.metrics.students_mentored }} students co-advised</span>
+</div>
+
+<p>
+  I have co-advised undergraduate and NSF REU researchers on side-channel security, malware
+  analysis, and machine learning. Several are co-authors on the papers listed under
+  <a href="{{ base_path }}/publications/">Publications</a>, and have gone on to roles at
+  MIT Lincoln Laboratory, IBM, Riverside Research, and Medpace. The full list, with the
+  papers each contributed to, is in my <a href="{{ base_path }}/cv/">CV</a>.
+</p>

@@ -1,0 +1,43 @@
+{% assign g = site.data.globe %}
+{% if g.pins and g.pins.size > 0 %}
+<section class="globe-band" aria-labelledby="globe-heading">
+  <div class="globe-wrap">
+
+    {% comment %}
+      data-pins carries the fallback pins from _data/globe.yml. jsonify then
+      escape is deliberate: escape converts the JSON's own quotes (and any
+      apostrophe, e.g. "Cincinnati Children's") to entities so the attribute
+      cannot be broken out of. getAttribute decodes it back in the browser.
+      data-visitor-api is empty until a Cloudflare Worker is deployed, in which
+      case globe.js just keeps showing these pins.
+    {% endcomment %}
+    <div class="globe-stage reveal" id="globe-stage"
+         data-visitor-api="{{ g.visitor_api }}"
+         data-pins="{{ g.pins | jsonify | escape }}">
+      <canvas id="globe-canvas" role="img"
+              aria-label="Rotating globe marking the places connected to this research: {% for p in g.pins %}{{ p.place }}{% unless forloop.last %}, {% endunless %}{% endfor %}."></canvas>
+    </div>
+
+    <div class="globe-copy">
+      <p class="globe-copy__eyebrow">Reach</p>
+      <h2 id="globe-heading">Where this work has travelled</h2>
+
+      <div class="globe-total" id="globe-total">
+        <strong>{{ g.pins | size }}</strong><span>places</span>
+      </div>
+
+      <p>
+        {% if g.visitor_api and g.visitor_api != "" %}
+          Live visitor locations, counted by country. No cookies, no tracking scripts,
+          nothing tied to an individual.
+        {% else %}
+          Conference venues and research homes behind the work on this site.
+        {% endif %}
+      </p>
+
+      <ul class="globe-legend" id="globe-legend"></ul>
+    </div>
+
+  </div>
+</section>
+{% endif %}

@@ -5,32 +5,82 @@ permalink: /publications/
 author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
-
 {% include base_path %}
 
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
+<p class="lede">
+  Every paper below has a link to read it. Where a free copy can be hosted here it is
+  marked <strong>Free PDF</strong>, so nothing is stuck behind a paywall.
+</p>
+
+<div class="hero__actions" style="margin:1rem 0 0.25rem;">
+  {% if site.author.googlescholar %}
+    <a class="action action--sm" href="{{ site.author.googlescholar }}">
+      <i class="ai ai-google-scholar" aria-hidden="true"></i> Google Scholar
+    </a>
+  {% endif %}
+  {% if site.author.orcid %}
+    <a class="action action--sm" href="{{ site.author.orcid }}">
+      <i class="ai ai-orcid" aria-hidden="true"></i> ORCID
+    </a>
+  {% endif %}
+  {% if site.author.researchgate %}
+    <a class="action action--sm" href="{{ site.author.researchgate }}">
+      <i class="fab fa-researchgate" aria-hidden="true"></i> ResearchGate
+    </a>
+  {% endif %}
+  <a class="action action--sm" href="{{ base_path }}/files/CV.pdf">
+    <i class="fas fa-file-lines" aria-hidden="true"></i> Full CV
+  </a>
+</div>
+
+{% include metrics.html compact=true %}
+
+<div class="pub-toolbar" role="search">
+  <div class="pub-toolbar__search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <label class="sr-only" for="pub-search">Search publications by title, author, venue, or topic</label>
+    <input id="pub-search" type="search" autocomplete="off"
+           placeholder="Search title, author, venue, topic&hellip;">
+  </div>
+
+  <div class="pub-toolbar__filters" role="group" aria-label="Filter by publication type">
+    <button class="chip js-pub-filter" type="button" data-filter="all" aria-pressed="true">All</button>
+    {% assign types = "Conference,Journal,Book Chapter,Preprint" | split: "," %}
+    {% for t in types %}
+      {% assign n = site.publications | where: "venue_type", t | size %}
+      {% if n > 0 %}
+        <button class="chip js-pub-filter" type="button" data-filter="{{ t }}" aria-pressed="false">{{ t }}{% if t != "Book Chapter" %}s{% endif %} <span class="muted">{{ n }}</span></button>
       {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
     {% endfor %}
+  </div>
+</div>
+
+<div id="pub-results">
+{% if site.publication_category %}
+  {% for category in site.publication_category %}
+    {% assign in_cat = site.publications | where: "category", category[0] | sort: "date" | reverse %}
+    {% if in_cat.size > 0 %}
+      <section class="js-pub-section">
+        <div class="section-head">
+          <h2>{{ category[1].title }}</h2>
+          <span class="section-head__meta">{{ in_cat.size }} {% if in_cat.size == 1 %}item{% else %}items{% endif %}</span>
+        </div>
+        <ul class="pub-list">
+          {% for post in in_cat %}
+            {% include publication-card.html post=post %}
+          {% endfor %}
+        </ul>
+      </section>
+    {% endif %}
   {% endfor %}
 {% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
+  <ul class="pub-list">
+    {% assign all_pubs = site.publications | sort: "date" | reverse %}
+    {% for post in all_pubs %}
+      {% include publication-card.html post=post %}
+    {% endfor %}
+  </ul>
 {% endif %}
+</div>
 
-
-
+<p class="pub-empty" id="pub-empty" hidden>No publications match that search.</p>

@@ -1,0 +1,41 @@
+{% comment %}
+  Metric tiles driven by _data/metrics.yml.
+
+  Each entry in `tiles` supplies either `key` (looked up in _data/metrics.yml)
+  or a literal `value`. A tile whose resolved value is blank is SKIPPED, so the
+  Google Scholar tiles simply do not appear until you fill those fields in
+  rather than displaying a zero or a placeholder.
+
+  Pass compact=true for the tighter variant used on /publications/.
+{% endcomment %}
+
+{% assign m = site.data.metrics %}
+{% assign rendered = 0 %}
+
+{% capture tiles_html %}
+{% for tile in m.tiles %}
+  {% if tile.key %}{% assign val = m[tile.key] %}{% else %}{% assign val = tile.value %}{% endif %}
+  {% if val and val != "" %}
+    {% assign rendered = rendered | plus: 1 %}
+    <li class="metric{% if tile.accent %} metric--accent{% endif %}">
+      <span class="metric__value"{% if tile.key %} data-metric="{{ tile.key }}"{% endif %}>{{ val }}</span>
+      <span class="metric__label">{{ tile.label }}</span>
+      {% if tile.note %}<span class="metric__note">{{ tile.note }}</span>{% endif %}
+    </li>
+  {% endif %}
+{% endfor %}
+{% endcapture %}
+
+{% if rendered > 0 %}
+  <ul class="metrics{% if include.compact %} metrics--compact{% endif %}"{% if site.author.orcid %} data-orcid="{{ site.author.orcid }}"{% endif %}>
+    {{ tiles_html }}
+  </ul>
+{% if m.scholar_updated and m.scholar_updated != "" %}
+{% comment %}
+  Kept flush against column 0 on purpose. This include is used inside markdown
+  pages, and kramdown turns any HTML indented four or more spaces into a code
+  block -- which rendered this line as literal escaped markup on the homepage.
+{% endcomment %}
+<p class="metric__note metric__asof">Citation figures as of {{ m.scholar_updated }}.</p>
+{% endif %}
+{% endif %}

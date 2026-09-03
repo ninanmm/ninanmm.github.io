@@ -1,0 +1,56 @@
+# Metrics shown on the homepage and /publications/.
+#
+# Counts below are derived from what is actually in this repository, so they
+# stay true as you add content. Update them when you add a paper or a talk.
+#
+# The citation figures below come from OpenAlex (https://openalex.org), queried
+# by ORCID, and were verified at the time of writing. assets/js/metrics.js
+# refreshes them in the visitor's browser from the same source and silently
+# keeps these values if that request fails, so the page is never wrong or empty.
+#
+# Google Scholar is NOT the source: it publishes no API, blocks automated
+# requests, and sends no CORS headers, so a browser-side fetch of it cannot
+# work. Scholar's counts are normally higher than OpenAlex's because it indexes
+# more grey literature — if you would rather show Scholar's numbers, type them
+# in here by hand and change the `note` on the tiles to say Google Scholar.
+#
+# A tile whose value is blank is skipped entirely rather than rendered as a
+# zero, so clearing one of these removes it from the page.
+
+# --- From OpenAlex, by ORCID 0009-0000-3619-5848
+scholar_citations: 33
+scholar_hindex: 3
+scholar_i10: 1
+scholar_updated: "September 2026"
+
+# --- Derived from repository content
+publications_total: 9
+conference_papers: 6
+journal_articles: 1
+book_chapters: 1
+preprints: 1
+invited_talks: 7
+students_mentored: 5
+best_paper_awards: 1
+pc_memberships: 6
+
+# --- Tiles rendered on the homepage, in order.
+# `key` reads from the values above; `value` hardcodes a string instead.
+# A tile whose `key` resolves to blank is skipped automatically.
+tiles:
+  - key: publications_total
+    label: "Publications"
+  - key: scholar_citations
+    label: "Citations"
+    note: "OpenAlex"
+  - key: scholar_hindex
+    label: "h-index"
+    note: "OpenAlex"
+  - value: "1"
+    label: "Best Paper"
+    note: "HOST 2024"
+    accent: true
+  - key: students_mentored
+    label: "Students Mentored"
+  - key: invited_talks
+    label: "Talks Given"
