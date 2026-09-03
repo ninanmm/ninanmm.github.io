@@ -8,8 +8,19 @@
     topics, summary, abstract, citation, keywords,
     localpdf (free copy hosted in /files), paperurl (publisher), doi,
     github (code repo), slidesurl, dataset_note
+
+  A Jekyll include tag that passes a named parameter (post equals some value)
+  binds that value under the include object -- as include-dot-post -- and
+  NOT as a bare post variable. This line normalizes it once so the rest of
+  the file can use the shorter post-dot-x throughout. Without this
+  normalization, a caller whose own local loop variable isn't literally
+  named post gets a silently blank card: post resolves to nil, so every
+  conditional below is false and nothing renders, with no error at all.
+  This exact bug shipped once already -- the publications archive page
+  happened to work only because its own loop variable is also named post.
 {% endcomment %}
 
+{% assign post = include.post %}
 {% assign yr = post.date | date: "%Y" %}
 {% capture searchblob %}{{ post.title }} {{ post.authors }} {{ post.venue }} {{ post.venue_short }} {{ post.keywords | join: " " }} {{ post.topics }} {{ yr }}{% endcapture %}
 

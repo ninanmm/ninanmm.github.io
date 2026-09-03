@@ -93,7 +93,7 @@ redirect_from:
 </div>
 
 <ul class="pub-list">
-  {% assign featured = "TinyPower: Side-Channel Attacks with Tiny Neural Networks,A Second Look at the Portability of Deep Learning Side-Channel Attacks over EM Traces,MicroPower: Micro Neural Networks for Side-Channel Attacks" | split: "," %}
+  {% assign featured = "A Second Look at the Portability of Deep Learning Side-Channel Attacks over EM Traces,TinyPower: Side-Channel Attacks with Tiny Neural Networks,TinyRadio: Tiny Neural Networks for Fingerprinting Radio Frequency Signals" | split: "," %}
   {% for name in featured %}
     {% assign match = site.publications | where: "title", name | first %}
     {% if match %}{% include publication-card.html post=match %}{% endif %}
