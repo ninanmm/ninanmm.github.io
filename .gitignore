@@ -11,3 +11,8 @@ Gemfile.lock
 # Ingore files created by npm
 node_modules
 package-lock.json
+
+# Wrangler's local cache/state (account id cache, dev-session state). Not a
+# secret by itself, but machine-local and not meant to be committed.
+cloudflare/.wrangler/
+.wrangler/

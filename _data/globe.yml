@@ -1,14 +1,16 @@
 # Fallback pins for the globe in the site footer band.
 #
-# These render whenever live visitor data is unavailable (no Cloudflare worker
-# deployed yet, request blocked, or the visitor is offline), so the globe is
-# never empty or broken. They are the places this research has actually gone:
-# conference venues and affiliations.
+# These render whenever live visitor data is unavailable (worker down, request
+# blocked, or the visitor is offline), so the globe is never empty or broken.
+# They are the places this research has actually gone: conference venues and
+# affiliations. Once `visitor_api` below resolves, the globe switches to real
+# visitor locations by country/city and keeps these as backup only.
 #
-# Once cloudflare/visitor-worker.js is deployed, set `visitor_api` below to its
-# URL and the globe switches to real visitor countries, keeping these as backup.
+# Worker: cloudflare/visitor-worker.js, deployed via cloudflare/wrangler.toml
+# (account: ninanmm@tamu.edu, KV namespace "VISITORS" id a822147ff71f40a8...).
+# Redeploy with `cd cloudflare && npx wrangler deploy` after editing the worker.
 
-visitor_api:   # e.g. "https://ninanmm-visitors.<your-subdomain>.workers.dev"
+visitor_api: "https://ninanmm-visitors.ninanmm.workers.dev"
 
 pins:
   - place: "College Station, TX"
