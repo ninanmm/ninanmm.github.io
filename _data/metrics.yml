@@ -3,17 +3,25 @@
 # Counts below are derived from what is actually in this repository, so they
 # stay true as you add content. Update them when you add a paper or a talk.
 #
-# scholar_* are BLANK on purpose. Google Scholar has no public API, so nothing
-# here can verify them and no number is invented for you. Fill them in from
-# your Scholar profile and the tiles appear; leave them blank and the tiles are
-# omitted rather than showing a placeholder. assets/js/metrics.js will also try
-# to refresh them at runtime and silently keeps these values if it cannot.
+# The citation figures below come from OpenAlex (https://openalex.org), queried
+# by ORCID, and were verified at the time of writing. assets/js/metrics.js
+# refreshes them in the visitor's browser from the same source and silently
+# keeps these values if that request fails, so the page is never wrong or empty.
+#
+# Google Scholar is NOT the source: it publishes no API, blocks automated
+# requests, and sends no CORS headers, so a browser-side fetch of it cannot
+# work. Scholar's counts are normally higher than OpenAlex's because it indexes
+# more grey literature — if you would rather show Scholar's numbers, type them
+# in here by hand and change the `note` on the tiles to say Google Scholar.
+#
+# A tile whose value is blank is skipped entirely rather than rendered as a
+# zero, so clearing one of these removes it from the page.
 
-# --- From your Google Scholar profile: https://scholar.google.com/citations?user=Zjv26VEAAAAJ
-scholar_citations:        # e.g. 87
-scholar_hindex:           # e.g. 5
-scholar_i10:              # e.g. 3
-scholar_updated:          # e.g. "September 2026"
+# --- From OpenAlex, by ORCID 0009-0000-3619-5848
+scholar_citations: 33
+scholar_hindex: 3
+scholar_i10: 1
+scholar_updated: "September 2026"
 
 # --- Derived from repository content
 publications_total: 9
@@ -34,10 +42,10 @@ tiles:
     label: "Publications"
   - key: scholar_citations
     label: "Citations"
-    note: "Google Scholar"
+    note: "OpenAlex"
   - key: scholar_hindex
     label: "h-index"
-    note: "Google Scholar"
+    note: "OpenAlex"
   - value: "1"
     label: "Best Paper"
     note: "HOST 2024"

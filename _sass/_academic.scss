@@ -248,6 +248,13 @@
   }
 }
 
+.metric__asof {
+  margin: -0.85rem 0 1.5rem;
+  font-size: 0.72rem;
+  color: var(--text-subtle);
+  font-family: var(--font-mono);
+}
+
 /* --------------------------------------------------------------- Badges */
 
 .badge {

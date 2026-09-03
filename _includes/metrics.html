@@ -30,7 +30,12 @@
   <ul class="metrics{% if include.compact %} metrics--compact{% endif %}"{% if site.author.orcid %} data-orcid="{{ site.author.orcid }}"{% endif %}>
     {{ tiles_html }}
   </ul>
-  {% if m.scholar_updated and m.scholar_updated != "" %}
-    <p class="metric__note" style="margin:-0.9rem 0 1.4rem;">Citation figures as of {{ m.scholar_updated }}.</p>
-  {% endif %}
+{% if m.scholar_updated and m.scholar_updated != "" %}
+{% comment %}
+  Kept flush against column 0 on purpose. This include is used inside markdown
+  pages, and kramdown turns any HTML indented four or more spaces into a code
+  block -- which rendered this line as literal escaped markup on the homepage.
+{% endcomment %}
+<p class="metric__note metric__asof">Citation figures as of {{ m.scholar_updated }}.</p>
+{% endif %}
 {% endif %}
