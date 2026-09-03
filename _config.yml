@@ -162,6 +162,20 @@ include:
   - files
 exclude:
   - cloudflare
+  # Repo documentation, not site pages. Jekyll (via the github-pages gem's
+  # jekyll-optional-front-matter plugin, which only runs on GitHub Pages' own
+  # build, not a plain `jekyll build`) renders every .md file as Liquid by
+  # default, front matter or not. CLAUDE.md documents this project's own
+  # Liquid/Jekyll templates in prose (e.g. "`{% if page.talk_type %}`"), and
+  # an unclosed example tag like that is a Liquid syntax error, not a comment
+  # -- it broke the GitHub Pages build outright (Liquid::SyntaxError: 'if' tag
+  # was never closed) while every local `jekyll build` stayed silent, because
+  # local testing here never went through the actual github-pages build
+  # command. Exclude every doc file that isn't meant to be a web page.
+  - CLAUDE.md
+  - DESIGN.md
+  - READMEWeb.md
+  - CONTRIBUTING.md
   - "*.sublime-project"
   - "*.sublime-workspace"
   - .asset-cache

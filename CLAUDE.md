@@ -62,14 +62,39 @@ There is no test suite and no linter.
 
 ## Deployment
 
-There is **no GitHub Actions workflow** (`.github/` holds only issue templates). GitHub Pages
-builds the site itself with its legacy `pages-build-deployment` pipeline on every push to
-`master`. Consequences:
+There is **no `.github/workflows/` file** in this repo (`.github/` holds only issue
+templates) — but GitHub Pages still builds via its own managed Actions pipeline
+(`actions/jekyll-build-pages`, driven by the `github-pages` gem) on every push to
+`master`, visible under the repo's Actions tab even with no workflow file checked in.
+Consequences:
 
 - Pushing to `master` publishes live. Treat it as a deploy.
 - Only plugins in the `whitelist` in `_config.yml` run (jekyll-feed, jekyll-gist,
   jekyll-paginate, jekyll-sitemap, jemoji). Do not add a plugin expecting it to work.
 - The `github-pages` gem in the `Gemfile` pins local versions to match Pages.
+
+**A plain `bundle exec jekyll build` succeeding locally does NOT mean the GitHub Pages
+build will succeed.** GitHub Pages actually runs `bundle exec github-pages build`, which
+loads a much larger plugin set than `_config.yml`'s whitelist implies — in particular
+`jekyll-optional-front-matter`, which makes Jekyll parse Liquid in **every** `.md` file in
+the source, including root-level docs like `CLAUDE.md` and `DESIGN.md`, whether or not
+they have front matter. A plain `jekyll build` does not load that plugin and stays silent.
+This already broke a deploy once: `CLAUDE.md` documented this project's own Liquid syntax
+in prose (`` `{% if page.talk_type %}` ``), and the unclosed example tag was a real Liquid
+syntax error under `github-pages build`, taking the live site down to whatever the last
+successful build was. Fixed by excluding every doc file that isn't meant to be a page
+(`CLAUDE.md`, `DESIGN.md`, `READMEWeb.md`, `CONTRIBUTING.md`) from `_config.yml`'s
+`exclude:` list — but the general rule stands: **before pushing to `master`, verify with
+the actual command GitHub Pages runs**:
+
+```bash
+docker run --rm -v "$(pwd)":/usr/src/app jekyll-site \
+  bundle exec github-pages build --source /usr/src/app --destination /usr/src/app/_site
+```
+
+not just `bundle exec jekyll build`. If you add a new root-level `.md`/`.markdown` file
+that isn't meant to be a site page, add it to `exclude:` immediately — don't wait to find
+out the hard way.
 
 ## Front-end architecture (added in the redesign)
 
