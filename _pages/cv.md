@@ -10,17 +10,21 @@ redirect_from:
 {% include base_path %}
 
 <style>
+  /* Uses the site's CSS custom properties (_sass/_tokens.scss) instead of
+     hardcoded hex colors, so this page follows dark mode like everything
+     else rather than always showing white cards. */
   .cv-page {
     line-height: 1.7;
-    color: #1f2937;
+    color: var(--text);
   }
 
   .cv-page h2 {
     margin-top: 0;
     margin-bottom: 0.75rem;
     padding-bottom: 0.35rem;
-    border-bottom: 1px solid #e5e7eb;
-    color: #0f172a;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--font-display);
     font-size: 1.18rem;
     letter-spacing: 0.01em;
   }
@@ -35,40 +39,40 @@ redirect_from:
   }
 
   .cv-page .cv-summary {
-    background: linear-gradient(135deg, #f8fbff 0%, #eef4ff 100%);
-    border: 1px solid #dbeafe;
-    border-radius: 1rem;
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-border);
+    border-radius: var(--r-lg);
     padding: 1rem 1.1rem;
     margin: 0.2rem 0 1.1rem;
-    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+    box-shadow: var(--shadow-sm);
   }
 
   .cv-page .cv-summary p {
     margin: 0;
-    color: #334155;
+    color: var(--text-muted);
   }
 
   .cv-page .cv-section {
-    background: #ffffff;
-    border: 1px solid #e5e7eb;
-    border-radius: 1rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--r-lg);
     padding: 1rem 1.1rem;
     margin: 0.9rem 0 1.2rem;
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+    box-shadow: var(--shadow-sm);
   }
 
   .cv-page .cv-card {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-left: 4px solid #2563eb;
-    border-radius: 0.8rem;
+    background: var(--surface-sunken);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent);
+    border-radius: var(--r-md);
     padding: 0.95rem 1rem;
     margin: 0.8rem 0 1.1rem;
-    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+    box-shadow: var(--shadow-sm);
   }
 
   .cv-page .cv-card strong {
-    color: #0f172a;
+    color: var(--text);
   }
 
   .cv-page .cv-item-title {
@@ -77,14 +81,14 @@ redirect_from:
   }
 
   .cv-page .cv-meta {
-    color: #475569;
+    color: var(--text-muted);
     font-size: 0.95rem;
     display: block;
     margin: 0.15rem 0 0.25rem;
   }
 
   .cv-page .cv-footnote {
-    color: #64748b;
+    color: var(--text-subtle);
     font-size: 0.95rem;
     margin-top: 0.2rem;
   }
@@ -94,17 +98,17 @@ redirect_from:
   }
 
   .cv-page a {
-    color: #1d4ed8;
+    color: var(--accent-text);
   }
 </style>
 
-<div class="cv-page">
+<div class="cv-page" markdown="1">
 
 <div class="cv-summary">
   <p><strong>Research profile:</strong> machine learning and security, with a focus on side-channel analysis, malware detection, explainable AI, and student mentorship.</p>
 </div>
 
-<div class="cv-section">
+<div class="cv-section" markdown="1">
 
 ## Education
 
@@ -120,7 +124,7 @@ redirect_from:
 
 </div>
 
-<div class="cv-section">
+<div class="cv-section" markdown="1">
 
 ## Research Experience
 
@@ -141,7 +145,7 @@ redirect_from:
 
 </div>
 
-<div class="cv-section">
+<div class="cv-section" markdown="1">
 
 ## Publications
 
@@ -158,7 +162,7 @@ redirect_from:
 
 </div>
 
-<div class="cv-section">
+<div class="cv-section" markdown="1">
 
 ## Talks
 
@@ -170,7 +174,7 @@ redirect_from:
 
 </div>
 
-<div class="cv-section">
+<div class="cv-section" markdown="1">
 
 ## Academic Service
 
@@ -182,7 +186,7 @@ redirect_from:
 
 </div>
 
-<div class="cv-section">
+<div class="cv-section" markdown="1">
 
 ## Technical Skills
 
@@ -192,7 +196,7 @@ redirect_from:
 
 </div>
 
-<div class="cv-section">
+<div class="cv-section" markdown="1">
 
 ## Co-Advised Students
 
@@ -228,7 +232,7 @@ redirect_from:
 
 </div>
 
-<div class="cv-section">
+<div class="cv-section" markdown="1">
 
 ## Mentoring
 
