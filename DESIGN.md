@@ -65,8 +65,9 @@ template bolds "Mabon Ninan" within it. `venue_type` drives the filter chips on
 `/publications/`; `category` still drives which section a paper appears in, and a
 `category` not listed under `publication_category` in `_config.yml` renders **nowhere**.
 
-`github:` is present but empty on every paper, awaiting repository URLs. Fill it in and
-the Code button and badge appear automatically.
+`github:` is filled in on the six UCdasec side-channel/malware papers (their repos verified
+against each README before linking) and still blank on the three clinical-NLP/survey ones.
+Fill it in on any publication and the Code button and badge appear automatically.
 
 ## Metrics
 

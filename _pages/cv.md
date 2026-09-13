@@ -126,6 +126,15 @@ redirect_from:
 
 <div class="cv-section" markdown="1">
 
+## Awards & Honors
+
+- **Best Student Paper**, IEEE HOST 2024
+- **Undergraduate Research Fellowship**, University of Cincinnati, 2022, 2023, 2024
+
+</div>
+
+<div class="cv-section" markdown="1">
+
 ## Research Experience
 
 - **Texas A&M University**, Research Assistant, Aug. 2024 – Present
@@ -179,6 +188,7 @@ redirect_from:
 ## Academic Service
 
 - PC Member, RAID 2026
+- PC Member, DSN 2026
 - PC Member, RAID 2025
 - Reviewer, Computers & Security (COSE), 2026
 - PC Member, The 41st ACM/SIGAPP Symposium on Applied Computing

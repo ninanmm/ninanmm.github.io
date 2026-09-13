@@ -159,8 +159,13 @@ and `venue_type`.
 PDFs live in `files/` and are served at `/files/<name>.pdf` (`files` is in the `include` list
 in `_config.yml`). Seven of the nine papers have a free local copy linked via `localpdf`.
 
-Every paper has an empty `github:` awaiting a repository URL; filling it in is all that is
-needed to surface the Code button.
+Six of the nine papers (the UCdasec side-channel/malware line of work: `EvilELF`, `SoftPower`,
+`TinyPower`, `CrossEM`, `MicroPower`, `TinyRadio`) now carry a `github:` repository URL, each
+verified against that repo's own README/citation rather than guessed from the paper title —
+`SoftPower` and `CrossEM` in particular don't share a name with their paper and were confirmed
+by fetching the repo. The remaining three (the two clinical-NLP papers and the survey book
+chapter) still have `github:` blank. Filling it in on any publication is all that is needed to
+surface the Code button.
 
 ### Navigation, author sidebar, layouts
 
@@ -187,9 +192,13 @@ carded `.archive__item`, gradient `.author__content`). Sass output is `compresse
 
 Page-level CSS is sometimes inlined in a `<style>` block in the page itself —
 `_pages/cv.md` defines its whole `.cv-page` / `.cv-section` / `.cv-card` design that way.
-`_pages/cv.md` is also the authoritative long-form CV (publications, talks, service,
-co-advised students), duplicating some of `_pages/about.md`; both need updating together
-when credentials change. `files/CV.pdf` is the downloadable version.
+`_pages/cv.md` is the sole, authoritative long-form CV (education, awards, research
+experience, service, publications, talks, co-advised students). `_pages/about.md` (the
+homepage) deliberately does **not** duplicate these sections anymore — it was cut down to
+hero, research interests, and selected work specifically so the landing page stays short,
+and closes with a one-line pointer to `/cv/` instead. Update credentials in `cv.md` only;
+if a fact (e.g. an award or PC membership) is ever added on the homepage again, move it into
+`cv.md` rather than keeping both in sync. `files/CV.pdf` is the downloadable version.
 
 ### Talk map
 
@@ -232,6 +241,10 @@ anything it generates is invisible on `/publications/` until you add one (see ab
 - `markdown_generator/publications.py` does not emit a `category:`, so anything it generates is
   invisible on `/publications/` until you add one. It also predates every field the new
   publication card uses.
+- `.timeline` / `.tl__*` and `.stack-sm` in `_sass/_academic.scss` are now unused — they styled
+  the homepage's Education/Research-experience timelines and Technical-skills list, which were
+  cut from `_pages/about.md` in the landing-page trim (that content lives only on `/cv/` now).
+  Left in place rather than deleted, same as the other dead code on this list.
 
 Fixed during the redesign, for reference: the head no longer links favicons that do not exist
 (the missing sizes were generated from `images/profile.png`), `images/manifest.json` no longer
