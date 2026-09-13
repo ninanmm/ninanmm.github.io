@@ -1,8 +1,10 @@
 /* ==========================================================================
    VISITOR GLOBE
-   Dependency-free canvas globe: wireframe graticule, pins, and arcs from the
-   home location to each pin. No three.js, no geodata, no network requests of
-   its own beyond the optional visitor API.
+   Dependency-free canvas globe: wireframe graticule, simplified continent
+   outlines, pins, and arcs from the home location to each pin. No three.js,
+   no network requests of its own beyond the optional visitor API -- the land
+   outlines are a static array (globe-land.js, loaded before this file), not
+   fetched.
 
    Data sources, in order of preference:
      1. The visitor API (a Cloudflare Worker) named in data-visitor-api.
@@ -35,11 +37,23 @@
   }
   if (!pins.length) return;
 
+  // Continent/island outlines from globe-land.js (loaded before this file).
+  // Missing or empty just means the graticule renders alone, same as before.
+  var LAND = window.GLOBE_LAND || [];
+
   var home = null;
   for (var i = 0; i < pins.length; i++) {
     if (pins[i].home) { home = pins[i]; break; }
   }
   if (!home) home = pins[0];
+
+  // Snapshot of the permanent pins (home + the conferences/institutions in
+  // _data/globe.yml) before live data ever touches `pins`. Live visitor
+  // traffic is merged onto this set rather than replacing it, so the globe
+  // keeps showing the real places this work has been presented even when
+  // actual visits so far skew toward one country -- true reach, not just
+  // this week's traffic.
+  var basePins = pins.slice();
 
   /* --------------------------------------------------------------- theme */
 
@@ -55,6 +69,11 @@
     palette.accent = v('--accent', '#1c46b8');
     palette.text   = v('--text-muted', '#5a616c');
     palette.face   = v('--surface', '#ffffff');
+    // Land stays grayscale, same family as the grid/rim, so the accent blue
+    // reads unambiguously as "data" (pins, arcs) rather than competing with
+    // a second hue for attention.
+    palette.land     = v('--text-muted', '#5a616c');
+    palette.landLine = v('--text-muted', '#5a616c');
   }
   readPalette();
 
@@ -137,6 +156,44 @@
       pts = [];
       for (lat = -90; lat <= 90; lat += 4) pts.push(toXYZ(lat, lon, spin));
       strokePath(pts, palette.grid, 1, 0.42);
+    }
+  }
+
+  // Coastlines from LAND (globe-land.js). Rings entirely on the visible face
+  // are closed and filled so they read as solid landmasses; a ring that
+  // straddles the horizon (partly on the far side) is stroked only -- filling
+  // it would draw a false straight chord across the gap where the ring dips
+  // behind the globe, since there is no proper spherical clipping here.
+  function drawLand(spin) {
+    for (var i = 0; i < LAND.length; i++) {
+      var ring = LAND[i];
+      var pts = [];
+      var anyFront = false, anyBack = false;
+      for (var j = 0; j < ring.length; j++) {
+        var p = toXYZ(ring[j][0], ring[j][1], spin);
+        pts.push(p);
+        if (p.z > 0.02) anyFront = true; else anyBack = true;
+      }
+      if (!anyFront) continue; // whole ring on the far side: nothing to draw
+
+      if (!anyBack) {
+        ctx.beginPath();
+        for (var k = 0; k < pts.length; k++) {
+          var s = project(pts[k]);
+          if (k === 0) ctx.moveTo(s.x, s.y); else ctx.lineTo(s.x, s.y);
+        }
+        ctx.closePath();
+        ctx.globalAlpha = 0.16;
+        ctx.fillStyle = palette.land;
+        ctx.fill();
+        ctx.globalAlpha = 0.55;
+        ctx.strokeStyle = palette.landLine;
+        ctx.lineWidth = 0.75;
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+      } else {
+        strokePath(pts, palette.landLine, 0.75, 0.5);
+      }
     }
   }
 
@@ -263,6 +320,7 @@
 
     drawFace();
     drawGraticule(spin);
+    drawLand(spin);
     drawRim();
 
     for (var j = 0; j < pins.length; j++) {
@@ -320,6 +378,41 @@
 
   /* ---------------------------------------------------- live visitor data */
 
+  // Great-circle distance in km, used only to decide whether a live visitor
+  // pin lands close enough to an existing pin (typically `home`) to fold
+  // into it instead of drawing a second, near-overlapping dot.
+  function distanceKm(lat1, lon1, lat2, lon2) {
+    var EARTH_KM = 6371;
+    var dLat = (lat2 - lat1) * RAD;
+    var dLon = (lon2 - lon1) * RAD;
+    var a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * RAD) * Math.cos(lat2 * RAD) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    return EARTH_KM * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+
+  // Combine live visitor pins with the permanent base pins (home plus the
+  // conferences/institutions from _data/globe.yml) instead of replacing them.
+  // A live pin within 50km of an existing one (most often a visit from
+  // `home`'s own city) folds its count into that pin rather than adding a
+  // duplicate-looking dot right next to it.
+  function mergePins(basePins, live) {
+    var merged = basePins.map(function (p) {
+      return { place: p.place, detail: p.detail, lat: p.lat, lon: p.lon, home: p.home, count: p.count || 0 };
+    });
+    live.forEach(function (l) {
+      var near = null;
+      for (var i = 0; i < merged.length; i++) {
+        if (distanceKm(merged[i].lat, merged[i].lon, l.lat, l.lon) < 50) { near = merged[i]; break; }
+      }
+      if (near) {
+        near.count = (near.count || 0) + (l.count || 1);
+      } else {
+        merged.push({ place: l.place || l.country || 'Unknown', lat: l.lat, lon: l.lon, count: l.count || 1 });
+      }
+    });
+    return merged;
+  }
+
   function loadVisitors() {
     var api = stage.getAttribute('data-visitor-api');
     if (!api) return; // no worker deployed; fallback pins stand
@@ -338,12 +431,12 @@
         });
         if (!live.length) return;
 
-        // Keep home so the arcs still originate somewhere meaningful.
-        var homeCopy = { place: home.place, detail: home.detail, lat: home.lat, lon: home.lon, home: true };
-        pins = [homeCopy].concat(live.map(function (l) {
-          return { place: l.place || l.country || 'Unknown', lat: l.lat, lon: l.lon, count: l.count || 1 };
-        }));
-        home = homeCopy;
+        pins = mergePins(basePins, live);
+        home = null;
+        for (var i = 0; i < pins.length; i++) {
+          if (pins[i].home) { home = pins[i]; break; }
+        }
+        if (!home) home = pins[0];
 
         renderLegend();
         setTotal(formatCount(data.total || 0), 'visits');

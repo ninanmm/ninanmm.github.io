@@ -83,10 +83,28 @@ nothing, the values from `_data/metrics.yml` stand.
 
 ## Globe
 
-`assets/js/globe.js` is a dependency-free canvas globe (no three.js, no geodata): a
-graticule wireframe, arcs from the home pin to each location, and pins scaled by count.
-It reads fallback pins from `_data/globe.yml` and upgrades to live visitor data when
-`visitor_api` is set. See `cloudflare/README.md` to deploy the (free) backend.
+`assets/js/globe.js` is a dependency-free canvas globe (no three.js, no network requests
+of its own beyond the optional visitor API): a graticule wireframe, simplified continent
+outlines, arcs from the home pin to each location, and pins scaled by count. It reads
+fallback pins from `_data/globe.yml` and merges in live visitor data when `visitor_api`
+is set. See `cloudflare/README.md` to deploy the (free) backend.
+
+The continent outlines are `assets/js/globe-land.js` — a static `window.GLOBE_LAND` array
+(61 simplified polygons from Natural Earth's public-domain 110m land data), loaded before
+`globe.js` in `_includes/scripts.html`. It exists so the sphere reads as Earth instead of
+a bare lat/lon grid; see that file's own header for exact provenance and how to regenerate
+it. `globe.js` draws a ring closed and filled when it sits entirely on the visible face,
+or stroked only (no fill) when it straddles the horizon, since there is no true spherical
+clipping here and filling a broken ring would draw a false chord across the gap.
+
+`visitor_api` data does not replace the fallback pins, it merges onto them: a live pin
+within 50km of an existing one (typically a visit from `home`'s own city) folds its count
+into that pin instead of drawing a near-duplicate dot beside it, and every other fallback
+pin (the conferences and institutions in `_data/globe.yml`) stays on the globe regardless
+of where visits happen to come from. Earlier this replaced the fallback pins outright, so
+once live tracking had any data at all, the two genuinely international fallback pins
+(Padua, Guildford) disappeared and the globe read as US-only even though the underlying
+reach was not.
 
 Details that matter if you edit it: the initial rotation is centred on the mean longitude
 of the pins and `TILT` is **positive** to bring the northern-hemisphere cluster to the

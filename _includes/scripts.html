@@ -3,16 +3,22 @@
 <script src="{{ base_path }}/assets/js/main.min.js"></script>
 
 {% comment %}
-  These three are separate files on purpose: main.min.js is a committed uglify
+  These are separate files on purpose: main.min.js is a committed uglify
   bundle that only changes when you run `npm run build:js`, so keeping site
   behaviour out of it means editing these takes effect immediately.
 
   The ?v= build timestamp busts browser and CDN caches on every deploy. Without
   it a returning visitor keeps running the previously cached copy of these
   files, which is exactly how a shipped fix can appear not to have shipped.
+
+  globe-land.js must load before globe.js -- it only defines a static
+  window.GLOBE_LAND array (continent outline data, see that file's own
+  header), which globe.js reads at init. Both are "defer", so execution
+  order follows document order regardless of fetch timing.
 {% endcomment %}
 <script src="{{ base_path }}/assets/js/site.js?v={{ site.time | date: '%s' }}" defer></script>
 <script src="{{ base_path }}/assets/js/metrics.js?v={{ site.time | date: '%s' }}" defer></script>
+<script src="{{ base_path }}/assets/js/globe-land.js?v={{ site.time | date: '%s' }}" defer></script>
 <script src="{{ base_path }}/assets/js/globe.js?v={{ site.time | date: '%s' }}" defer></script>
 
 {% include analytics.html %}
