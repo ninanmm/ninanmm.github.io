@@ -93,7 +93,7 @@ redirect_from:
 </div>
 
 <ul class="pub-list">
-  {% assign featured = "A Second Look at the Portability of Deep Learning Side-Channel Attacks over EM Traces,TinyPower: Side-Channel Attacks with Tiny Neural Networks,TinyRadio: Tiny Neural Networks for Fingerprinting Radio Frequency Signals" | split: "," %}
+  {% assign featured = "AutoPYara: Next-Gen YARA Rule Generator for Malware Family Clustering,A Second Look at the Portability of Deep Learning Side-Channel Attacks over EM Traces,TinyPower: Side-Channel Attacks with Tiny Neural Networks" | split: "," %}
   {% for name in featured %}
     {% assign match = site.publications | where: "title", name | first %}
     {% if match %}{% include publication-card.html post=match %}{% endif %}

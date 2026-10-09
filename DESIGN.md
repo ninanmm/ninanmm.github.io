@@ -58,6 +58,7 @@ doi          # renders the DOI button
 github       # code repo — renders the Code button and a "Code available" badge
 slidesurl
 dataset_note # renders a "Public dataset" badge
+artifacts    # list of {label, host, url}; listed in the abstract panel and on the detail page
 ```
 
 Every link is optional and only renders when present. `authors` is a plain string; the

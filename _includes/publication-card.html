@@ -7,7 +7,8 @@
     title, permalink, date, authors, venue, venue_short, venue_type, award,
     topics, summary, abstract, citation, keywords,
     localpdf (free copy hosted in /files), paperurl (publisher), doi,
-    github (code repo), slidesurl, dataset_note
+    github (code repo), slidesurl, dataset_note,
+    artifacts (list of label/host/url, shown in the abstract panel)
 
   A Jekyll include tag that passes a named parameter (post equals some value)
   binds that value under the include object -- as include-dot-post -- and
@@ -110,6 +111,12 @@
       <h4>Abstract</h4>
       <p>{{ post.abstract }}</p>
       {% if post.dataset_note %}<p><strong>Artifact.</strong> {{ post.dataset_note }}</p>{% endif %}
+      {% if post.artifacts %}
+        <h4>Artifact availability</h4>
+        <ul>
+          {% for a in post.artifacts %}<li><a href="{{ a.url }}">{{ a.label }}</a> ({{ a.host }})</li>{% endfor %}
+        </ul>
+      {% endif %}
     </div>
   {% endif %}
 </li>
