@@ -8,6 +8,8 @@
     topics, summary, abstract, citation, keywords,
     localpdf (free copy hosted in /files), paperurl (publisher), doi,
     github (code repo), slidesurl, dataset_note,
+    links (list of label/url extra buttons, e.g. PyPI, Datasets),
+    paperurl_label (text of the paperurl button, e.g. Documentation website),
     artifacts (list of label/host/url, shown in the abstract panel)
 
   A Jekyll include tag that passes a named parameter (post equals some value)
@@ -65,7 +67,7 @@
     {% if post.paperurl %}
       <a class="action action--sm" href="{{ post.paperurl }}">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14 21 3"/></svg>
-        {% if post.doi %}Publisher{% else %}Read online{% endif %}
+        {% if post.paperurl_label %}{{ post.paperurl_label }}{% elsif post.doi %}Publisher{% else %}Read online{% endif %}
       </a>
     {% endif %}
 
@@ -75,6 +77,10 @@
         Code
       </a>
     {% endif %}
+
+    {% for l in post.links %}
+      <a class="action action--sm" href="{{ l.url }}">{{ l.label }}</a>
+    {% endfor %}
 
     {% if post.slidesurl %}
       <a class="action action--sm" href="{{ post.slidesurl }}">

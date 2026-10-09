@@ -58,6 +58,8 @@ doi          # renders the DOI button
 github       # code repo — renders the Code button and a "Code available" badge
 slidesurl
 dataset_note # renders a "Public dataset" badge
+links        # list of {label, url} extra buttons (PyPI, Datasets, ...)
+paperurl_label # text of the paperurl button
 artifacts    # list of {label, host, url}; listed in the abstract panel and on the detail page
 ```
 

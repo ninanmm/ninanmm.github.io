@@ -47,16 +47,14 @@ layout: default
       <section class="page__content" itemprop="text">
         {{ content }}
 
-        {% if page.citation and page.paperurl and page.slidesurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a> | <a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.citation and page.paperurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.paperurl }}">Download Paper</a></p>
-        {% elsif page.citation and page.slidesurl %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}<br /><a href="{{ page.slidesurl }}">Download Slides</a></p>
-        {% elsif page.citation %}
-          <p style="font-size: smaller">Recommended citation: {{ page.citation }}</p>
-        {% elsif page.slidesurl %}
-          <p style="font-size: smaller"><a href="{{ page.slidesurl }}">Download Slides</a></p>
+        {% if page.citation or page.localpdf or page.paperurl or page.slidesurl %}
+          <p style="font-size: smaller">
+            {% if page.citation %}Recommended citation: {{ page.citation }}<br />{% endif %}
+            {% assign links = 0 %}
+            {% if page.localpdf %}<a href="{{ base_path }}{{ page.localpdf }}">Download PDF</a>{% assign links = links | plus: 1 %}{% endif %}
+            {% if page.paperurl %}{% if links > 0 %} | {% endif %}<a href="{{ page.paperurl }}">{{ page.paperurl_label | default: "Publisher page" }}</a>{% assign links = links | plus: 1 %}{% endif %}
+            {% if page.slidesurl %}{% if links > 0 %} | {% endif %}<a href="{{ page.slidesurl }}">Download Slides</a>{% endif %}
+          </p>
         {% endif %}
 
         {% if page.link %}<div><a href="{{ page.link }}" class="btn">{{ site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
