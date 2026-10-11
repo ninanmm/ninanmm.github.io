@@ -186,14 +186,28 @@ redirect_from:
 
 <div class="cv-section" markdown="1">
 
-## Academic Service
+## Peer Review & Service
 
-- PC Member, RAID 2026
+**Journal reviewing**
+
+- Reviewer, *IEEE Transactions on Dependable and Secure Computing* (TDSC), active reviewer ([Web of Science profile](https://www.webofscience.com/wos/author/record/98313581))
+- Reviewer, *Computers & Security* (COSE), 2026 ([ORCID](https://orcid.org/0009-0000-3619-5848))
+
+**Program committees**
+
+- PC Member, [AISec 2026](https://aisec.cc/#committee) (19th ACM Workshop on Artificial Intelligence and Security, co-located with CCS)
+- PC Member, [RAID 2026](https://raid2026.org/committees.html) (29th International Symposium on Research in Attacks, Intrusions and Defenses)
 - PC Member, DSN 2026
-- PC Member, RAID 2025
-- Reviewer, Computers & Security (COSE), 2026
-- PC Member, The 41st ACM/SIGAPP Symposium on Applied Computing
-- Artifact Evaluator, CCS 2025
+- PC Member, [RAID 2025](https://raid2025.github.io/committees.html) (28th International Symposium on Research in Attacks, Intrusions and Defenses)
+- PC Member, The 41st ACM/SIGAPP Symposium on Applied Computing (SAC)
+
+**Artifact evaluation**
+
+- Artifact Evaluator, ACM CCS 2026
+- Artifact Evaluator, NDSS 2026
+- Artifact Evaluator, ACM CCS 2025
+
+<p class="cv-footnote">Links are given where a public record exists (committee pages, Web of Science, ORCID). Other roles have no public listing.</p>
 
 </div>
 
