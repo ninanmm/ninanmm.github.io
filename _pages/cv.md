@@ -176,6 +176,7 @@ redirect_from:
 
 ## Talks
 
+- ACSAC 2026, Los Angeles, CA, Dec. 2026 (upcoming): AutoPYara
 - CSCE Graduate Seminar, Texas A&M University, Feb. 2026
 - AI for Cybersecurity Research, Texas A&M University, Feb. 2025
 - RAID 2024, Padua, Italy, Sep. 2024
