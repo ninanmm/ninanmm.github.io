@@ -176,6 +176,7 @@ redirect_from:
 
 ## Talks
 
+- LASER (co-located with ACSAC 2026), Los Angeles, CA, Dec. 2026 (upcoming): Lessons from benchmarking automated YARA rule generation
 - ACSAC 2026, Los Angeles, CA, Dec. 2026 (upcoming): AutoPYara
 - CSCE Graduate Seminar, Texas A&M University, Feb. 2026
 - AI for Cybersecurity Research, Texas A&M University, Feb. 2025
