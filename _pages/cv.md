@@ -197,6 +197,7 @@ redirect_from:
 
 **Program committees**
 
+- PC Member, NDSS 2027 Posters
 - PC Member, [AISec 2026](https://aisec.cc/#committee) (19th ACM Workshop on Artificial Intelligence and Security, co-located with CCS)
 - PC Member, [RAID 2026](https://raid2026.org/committees.html) (29th International Symposium on Research in Attacks, Intrusions and Defenses)
 - PC Member, DSN 2026
@@ -205,6 +206,7 @@ redirect_from:
 
 **Artifact evaluation**
 
+- Artifact Evaluation Committee Member, NDSS 2027 (Fall review cycle)
 - Artifact Evaluator, ACM CCS 2026
 - Artifact Evaluator, NDSS 2026
 - Artifact Evaluator, ACM CCS 2025
