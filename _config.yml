@@ -300,6 +300,11 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+  # unlisted static page: keep it out of sitemap.xml
+  - scope:
+      path: "2ec6fc218d32776d"
+    values:
+      sitemap: false
 
 
 # Sass/SCSS
